@@ -50,12 +50,16 @@
             
             // Get form data
             const formData = new FormData(form);
+            
+            // Add honeypot field (hidden field for bot protection)
+            formData.append('website', ''); // Honeypot field
+            
+            // Basic validation
             const data = {};
             for (let [key, value] of formData.entries()) {
                 data[key] = value;
             }
             
-            // Basic validation
             if (!validateForm(data)) {
                 return;
             }
@@ -66,21 +70,49 @@
             submitBtn.textContent = 'Wird gesendet...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(() => {
-                // Reset form
-                form.reset();
-                
-                // Show success message
-                showNotification('Ihre Nachricht wurde erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.', 'success');
-                
+            // Send form data to PHP backend
+            fetch('contact-handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Reset form
+                    form.reset();
+                    
+                    // Show success message
+                    showNotification(data.message, 'success');
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    // Show error message
+                    showNotification(data.message, 'error');
+                    
+                    // Highlight missing fields if provided
+                    if (data.missing_fields) {
+                        data.missing_fields.forEach(field => {
+                            const fieldElement = document.getElementById(field);
+                            if (fieldElement) {
+                                fieldElement.style.borderColor = '#ff4d6d';
+                                setTimeout(() => {
+                                    fieldElement.style.borderColor = '';
+                                }, 3000);
+                            }
+                        });
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.', 'error');
+            })
+            .finally(() => {
                 // Reset button
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-                
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 2000);
+            });
         });
     }
 
