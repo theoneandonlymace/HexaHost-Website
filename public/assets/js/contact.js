@@ -66,21 +66,36 @@
             submitBtn.textContent = 'Wird gesendet...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(() => {
-                // Reset form
-                form.reset();
-                
-                // Show success message
-                showNotification('Ihre Nachricht wurde erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.', 'success');
-                
+            // Send form data to PHP backend
+            fetch('contact-handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Reset form
+                    form.reset();
+                    
+                    // Show success message
+                    showNotification(data.message, 'success');
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    // Show error message
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.', 'error');
+            })
+            .finally(() => {
                 // Reset button
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-                
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 2000);
+            });
         });
     }
 
