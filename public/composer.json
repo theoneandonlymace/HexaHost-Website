@@ -1,0 +1,19 @@
+{
+    "name": "hexahost/contact-form",
+    "description": "HexaHost.de Contact Form with PHPMailer",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "HexaHost\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+} 
