@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block access to private files
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Allow CSS and JS files for better SEO
+Allow: /assets/css/style.css
+Allow: /assets/js/main.js
+Allow: /assets/js/contact.js
+
+# Sitemap location
+Sitemap: https://hexahost.de/sitemap.xml
+
+# Crawl delay (optional, adjust as needed)
+Crawl-delay: 1

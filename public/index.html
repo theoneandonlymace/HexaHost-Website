@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexaHost.de - Zuverlässiges Hosting aus Niederbayern</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Russo+One&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="HexaHost.de - Zuverlässiges und preiswertes Hosting aus Niederbayern. VPS, VPC, Mail Gateway und Webhosting Lösungen.">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <span class="logo-text">HexaHost</span>
+                        <span class="logo-tld">.de</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Produkte</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vpc.html">Virtual Private Container</a></li>
+                            <li><a href="vps.html">Virtual Private Server</a></li>
+                            <li><a href="mail-gateway.html">Mail Gateway</a></li>
+                            <li><a href="webhosting.html">Webhosting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">Über uns</a></li>
+                    <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Zuverlässiges Hosting aus <span class="highlight">Niederbayern</span>
+                    </h1>
+                    <p class="hero-description">
+                        Entdecken Sie unsere preiswerten und zuverlässigen Hosting-Lösungen. 
+                        Von Virtual Private Servern bis hin zu Webhosting - wir haben die 
+                        perfekte Lösung für Ihre Bedürfnisse.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#products" class="btn btn-primary">Produkte entdecken</a>
+                        <a href="contact.html" class="btn btn-secondary">Kontakt aufnehmen</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card glass-card">
+                        <div class="server-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>99.9% Uptime</h3>
+                        <p>Zuverlässige Infrastruktur</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Unsere Hosting-Lösungen</h2>
+                    <p class="section-description">
+                        Modernste Technologie auf Proxmox-Basis für maximale Performance und Zuverlässigkeit
+                    </p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 7V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/>
+                                <path d="M4 7h16"/>
+                                <path d="M4 7v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7"/>
+                                <circle cx="9" cy="11" r="2"/>
+                                <path d="m13 13 4 4"/>
+                            </svg>
+                        </div>
+                        <h3 class="product-title">Virtual Private Container</h3>
+                        <p class="product-description">
+                            Effiziente LXC-Container auf Proxmox-Basis für optimale Ressourcennutzung
+                        </p>
+                        <div class="product-features">
+                            <span class="feature">• Proxmox LXC</span>
+                            <span class="feature">• Hohe Performance</span>
+                            <span class="feature">• Skalierbar</span>
+                        </div>
+                        <div class="product-price">
+                            ab <span class="price">4,99€</span> /Monat
+                        </div>
+                        <a href="vpc.html" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+
+                    <div class="product-card glass-card featured">
+                        <div class="featured-badge">Beliebt</div>
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3 class="product-title">Virtual Private Server</h3>
+                        <p class="product-description">
+                            Vollwertige KVM-Virtualisierung mit maximaler Flexibilität und Kontrolle
+                        </p>
+                        <div class="product-features">
+                            <span class="feature">• Proxmox KVM</span>
+                            <span class="feature">• Vollzugriff</span>
+                            <span class="feature">• Alle OS</span>
+                        </div>
+                        <div class="product-price">
+                            ab <span class="price">9,99€</span> /Monat
+                        </div>
+                        <a href="vps.html" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <h3 class="product-title">Mail Gateway</h3>
+                        <p class="product-description">
+                            Professioneller E-Mail-Schutz mit Spam- und Virenfilterung
+                        </p>
+                        <div class="product-features">
+                            <span class="feature">• Spam-Schutz</span>
+                            <span class="feature">• Viren-Filter</span>
+                            <span class="feature">• Einfache Verwaltung</span>
+                        </div>
+                        <div class="product-price">
+                            ab <span class="price">2,99€</span> /Monat
+                        </div>
+                        <a href="mail-gateway.html" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+
+                    <div class="product-card glass-card">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="product-title">Webhosting</h3>
+                        <p class="product-description">
+                            Klassisches Webhosting mit allem was Sie für Ihre Website benötigen
+                        </p>
+                        <div class="product-features">
+                            <span class="feature">• PHP & MySQL</span>
+                            <span class="feature">• SSL-Zertifikate</span>
+                            <span class="feature">• E-Mail inklusive</span>
+                        </div>
+                        <div class="product-price">
+                            ab <span class="price">1,99€</span> /Monat
+                        </div>
+                        <a href="webhosting.html" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Warum HexaHost?</h2>
+                    <p class="section-description">
+                        Überzeugen Sie sich von unseren Vorteilen
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Zuverlässigkeit</h3>
+                        <p>99.9% Uptime-Garantie und redundante Infrastruktur für maximale Verfügbarkeit</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"/>
+                                <path d="M12 1v6"/>
+                                <path d="M12 17v6"/>
+                                <path d="M3.75 6.75l4.5 4.5"/>
+                                <path d="M15.75 15.75l4.5 4.5"/>
+                                <path d="M1 12h6"/>
+                                <path d="M17 12h6"/>
+                                <path d="M3.75 17.25l4.5-4.5"/>
+                                <path d="M15.75 8.25l4.5-4.5"/>
+                            </svg>
+                        </div>
+                        <h3>Performance</h3>
+                        <p>Modernste Hardware und optimierte Konfigurationen für beste Leistung</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 7l-5-5-5 5M17 17l-5 5-5-5"/>
+                            </svg>
+                        </div>
+                        <h3>Faire Preise</h3>
+                        <p>Transparent kalkulierte Preise ohne versteckte Kosten</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Support aus Bayern</h3>
+                        <p>Persönlicher Support direkt aus Niederbayern in deutscher Sprache</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content glass-card">
+                    <h2>Bereit für zuverlässiges Hosting?</h2>
+                    <p>Starten Sie noch heute mit HexaHost und erleben Sie den Unterschied</p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn btn-primary">Jetzt starten</a>
+                        <a href="about.html" class="btn btn-secondary">Mehr über uns</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HexaHost.de</h4>
+                    <p>Zuverlässiges Hosting aus Niederbayern</p>
+                    <div class="footer-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>Niederbayern, Deutschland</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Produkte</h4>
+                    <ul>
+                        <li><a href="vpc.html">Virtual Private Container</a></li>
+                        <li><a href="vps.html">Virtual Private Server</a></li>
+                        <li><a href="mail-gateway.html">Mail Gateway</a></li>
+                        <li><a href="webhosting.html">Webhosting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href="about.html">Über uns</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Hilfe-Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="contact.html">Support-Ticket</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HexaHost.de - Alle Rechte vorbehalten</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexaHost.de - Demo Übersicht</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .demo-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-card h3 {
+            margin-bottom: 15px;
+            color: #f59e0b;
+        }
+        
+        .demo-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px 0 rgba(124, 58, 237, 0.4);
+        }
+        
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HexaHost.de Demo</h1>
+        
+        <div class="info">
+            <h3>🚀 Website erfolgreich erstellt!</h3>
+            <p>Eine moderne, umfangreiche Website für das Hosting-Unternehmen HexaHost.de mit Glasmorphism-Design, lila/violettem Farbschema und vollständiger Produktpräsentation.</p>
+            
+            <div class="tech-stack">
+                <span class="tech-item">HTML5</span>
+                <span class="tech-item">CSS3</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">Glassmorphism</span>
+                <span class="tech-item">Responsive</span>
+                <span class="tech-item">SEO-optimiert</span>
+            </div>
+        </div>
+        
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>🏠 Startseite</h3>
+                <p>Hero-Section mit Produktübersicht und Features</p>
+                <a href="public/index.html">Startseite öffnen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>📦 VPC</h3>
+                <p>Virtual Private Container mit 4 Paketen</p>
+                <a href="public/vpc.html">VPC ansehen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>🖥️ VPS</h3>
+                <p>Virtual Private Server mit KVM</p>
+                <a href="public/vps.html">VPS ansehen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>📧 Mail Gateway</h3>
+                <p>E-Mail-Schutz und Filterung</p>
+                <a href="public/mail-gateway.html">Mail Gateway ansehen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>🌐 Webhosting</h3>
+                <p>Klassisches Hosting mit PHP & MySQL</p>
+                <a href="public/webhosting.html">Webhosting ansehen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>ℹ️ Über uns</h3>
+                <p>Unternehmensinformationen aus Niederbayern</p>
+                <a href="public/about.html">Über uns ansehen</a>
+            </div>
+            
+            <div class="demo-card">
+                <h3>📞 Kontakt</h3>
+                <p>Kontaktformular mit FAQ</p>
+                <a href="public/contact.html">Kontakt öffnen</a>
+            </div>
+        </div>
+        
+        <div class="info" style="margin-top: 30px;">
+            <h3>🛠️ Entwicklung</h3>
+            <p>Zum Testen der Website einen lokalen Server starten:</p>
+            <code style="background: rgba(0,0,0,0.3); padding: 10px; display: block; border-radius: 5px; margin-top: 10px;">
+                python -m http.server 8000<br>
+                # oder<br>
+                npx serve public
+            </code>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Private Server - KVM Virtualisierung | HexaHost.de</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Russo+One&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Virtual Private Server auf Proxmox KVM-Basis. Vollwertige Virtualisierung mit Root-Zugriff ab 9,99€/Monat bei HexaHost.de">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <span class="logo-text">HexaHost</span>
+                        <span class="logo-tld">.de</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link active">Produkte</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vpc.html">Virtual Private Container</a></li>
+                            <li><a href="vps.html">Virtual Private Server</a></li>
+                            <li><a href="mail-gateway.html">Mail Gateway</a></li>
+                            <li><a href="webhosting.html">Webhosting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">Über uns</a></li>
+                    <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Product Hero -->
+        <section class="product-hero">
+            <div class="container">
+                <div class="product-hero-content">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <span>Virtual Private Server</span>
+                    </div>
+                    <h1 class="product-hero-title">
+                        Virtual Private Server
+                        <span class="highlight">auf Proxmox KVM</span>
+                    </h1>
+                    <p class="product-hero-description">
+                        Maximale Flexibilität und Kontrolle mit vollwertiger KVM-Virtualisierung. 
+                        Installieren Sie jedes Betriebssystem und genießen Sie vollständigen Root-Zugriff.
+                    </p>
+                    <div class="product-hero-features">
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <span>Vollwertiger Server</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                            <span>Alle Betriebssysteme</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            </svg>
+                            <span>Root-Zugriff</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VPS Packages -->
+        <section class="packages">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">VPS Pakete</h2>
+                    <p class="section-description">
+                        Leistungsstarke Virtual Private Server für jeden Bedarf
+                    </p>
+                </div>
+                <div class="packages-grid">
+                    <!-- Basic Package -->
+                    <div class="package-card glass-card">
+                        <div class="package-header">
+                            <h3 class="package-name">VPS Basic</h3>
+                            <div class="package-price">
+                                <span class="price">9,99€</span>
+                                <span class="period">/Monat</span>
+                            </div>
+                        </div>
+                        <div class="package-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">CPU Kerne:</span>
+                                <span class="spec-value">2 vCores</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">RAM:</span>
+                                <span class="spec-value">4 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">SSD Speicher:</span>
+                                <span class="spec-value">50 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Traffic:</span>
+                                <span class="spec-value">2 TB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">IPv4 Adressen:</span>
+                                <span class="spec-value">1</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature">✓ KVM Virtualisierung</div>
+                            <div class="feature">✓ Vollzugriff (Root)</div>
+                            <div class="feature">✓ Alle Betriebssysteme</div>
+                            <div class="feature">✓ Backup inklusive</div>
+                            <div class="feature">✓ 24/7 Monitoring</div>
+                            <div class="feature">✓ Rescue-System</div>
+                        </div>
+                        <a href="contact.html?package=vps-basic" class="btn btn-primary">Jetzt bestellen</a>
+                    </div>
+
+                    <!-- Standard Package -->
+                    <div class="package-card glass-card featured">
+                        <div class="featured-badge">Beliebt</div>
+                        <div class="package-header">
+                            <h3 class="package-name">VPS Standard</h3>
+                            <div class="package-price">
+                                <span class="price">19,99€</span>
+                                <span class="period">/Monat</span>
+                            </div>
+                        </div>
+                        <div class="package-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">CPU Kerne:</span>
+                                <span class="spec-value">4 vCores</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">RAM:</span>
+                                <span class="spec-value">8 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">SSD Speicher:</span>
+                                <span class="spec-value">100 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Traffic:</span>
+                                <span class="spec-value">4 TB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">IPv4 Adressen:</span>
+                                <span class="spec-value">1</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature">✓ KVM Virtualisierung</div>
+                            <div class="feature">✓ Vollzugriff (Root)</div>
+                            <div class="feature">✓ Alle Betriebssysteme</div>
+                            <div class="feature">✓ Tägliches Backup</div>
+                            <div class="feature">✓ 24/7 Monitoring</div>
+                            <div class="feature">✓ Rescue-System</div>
+                            <div class="feature">✓ Snapshot-Funktion</div>
+                        </div>
+                        <a href="contact.html?package=vps-standard" class="btn btn-primary">Jetzt bestellen</a>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="package-card glass-card">
+                        <div class="package-header">
+                            <h3 class="package-name">VPS Premium</h3>
+                            <div class="package-price">
+                                <span class="price">39,99€</span>
+                                <span class="period">/Monat</span>
+                            </div>
+                        </div>
+                        <div class="package-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">CPU Kerne:</span>
+                                <span class="spec-value">6 vCores</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">RAM:</span>
+                                <span class="spec-value">16 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">SSD Speicher:</span>
+                                <span class="spec-value">200 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Traffic:</span>
+                                <span class="spec-value">8 TB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">IPv4 Adressen:</span>
+                                <span class="spec-value">2</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature">✓ KVM Virtualisierung</div>
+                            <div class="feature">✓ Vollzugriff (Root)</div>
+                            <div class="feature">✓ Alle Betriebssysteme</div>
+                            <div class="feature">✓ Stündliches Backup</div>
+                            <div class="feature">✓ 24/7 Monitoring</div>
+                            <div class="feature">✓ Rescue-System</div>
+                            <div class="feature">✓ Snapshot-Funktion</div>
+                            <div class="feature">✓ Priority Support</div>
+                        </div>
+                        <a href="contact.html?package=vps-premium" class="btn btn-primary">Jetzt bestellen</a>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="package-card glass-card">
+                        <div class="package-header">
+                            <h3 class="package-name">VPS Enterprise</h3>
+                            <div class="package-price">
+                                <span class="price">79,99€</span>
+                                <span class="period">/Monat</span>
+                            </div>
+                        </div>
+                        <div class="package-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">CPU Kerne:</span>
+                                <span class="spec-value">12 vCores</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">RAM:</span>
+                                <span class="spec-value">32 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">SSD Speicher:</span>
+                                <span class="spec-value">500 GB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Traffic:</span>
+                                <span class="spec-value">15 TB</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">IPv4 Adressen:</span>
+                                <span class="spec-value">4</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature">✓ KVM Virtualisierung</div>
+                            <div class="feature">✓ Vollzugriff (Root)</div>
+                            <div class="feature">✓ Alle Betriebssysteme</div>
+                            <div class="feature">✓ Stündliches Backup</div>
+                            <div class="feature">✓ 24/7 Monitoring</div>
+                            <div class="feature">✓ Rescue-System</div>
+                            <div class="feature">✓ Snapshot-Funktion</div>
+                            <div class="feature">✓ Priority Support</div>
+                            <div class="feature">✓ Dedizierte CPU</div>
+                        </div>
+                        <a href="contact.html?package=vps-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating Systems -->
+        <section class="operating-systems">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Betriebssysteme</h2>
+                    <p class="section-description">
+                        Wählen Sie aus einer Vielzahl von Betriebssystemen
+                    </p>
+                </div>
+                <div class="os-grid">
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Ubuntu</h3>
+                        <p>20.04 LTS, 22.04 LTS, 24.04 LTS</p>
+                    </div>
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Debian</h3>
+                        <p>11 (Bullseye), 12 (Bookworm)</p>
+                    </div>
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>CentOS</h3>
+                        <p>Stream 8, Stream 9</p>
+                    </div>
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Rocky Linux</h3>
+                        <p>8.x, 9.x</p>
+                    </div>
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Windows Server</h3>
+                        <p>2019, 2022 (auf Anfrage)</p>
+                    </div>
+                    <div class="os-item glass-card">
+                        <div class="os-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Weitere</h3>
+                        <p>Fedora, openSUSE, FreeBSD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VPS Features -->
+        <section class="vps-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">VPS Vorteile</h2>
+                    <p class="section-description">
+                        Warum unsere Virtual Private Server die beste Wahl sind
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>KVM Virtualisierung</h3>
+                        <p>Vollwertige Hardware-Virtualisierung mit garantierten Ressourcen und maximaler Isolation.</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Flexible Betriebssysteme</h3>
+                        <p>Installieren Sie jedes Betriebssystem Ihrer Wahl - von Linux bis Windows Server.</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 7V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/>
+                                <path d="M4 7h16"/>
+                                <path d="M4 7v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7"/>
+                                <circle cx="9" cy="11" r="2"/>
+                                <path d="m13 13 4 4"/>
+                            </svg>
+                        </div>
+                        <h3>Vollzugriff</h3>
+                        <p>Root-Zugriff und administrative Rechte für maximale Konfigurationsfreiheit.</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            </svg>
+                        </div>
+                        <h3>Skalierbarkeit</h3>
+                        <p>Erweitern Sie CPU, RAM und Speicher jederzeit nach Ihren Anforderungen.</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Sicherheit</h3>
+                        <p>Isolierte Umgebung mit DDoS-Schutz und regelmäßigen Sicherheitsupdates.</p>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Management-Tools</h3>
+                        <p>Intuitive Verwaltung über Proxmox-Interface mit Konsolen-Zugriff und Monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases for VPS -->
+        <section class="use-cases">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Anwendungsbereiche</h2>
+                    <p class="section-description">
+                        Ideal für professionelle Anwendungen
+                    </p>
+                </div>
+                <div class="use-cases-grid">
+                    <div class="use-case-item glass-card">
+                        <h3>Web-Server</h3>
+                        <p>Hosting von Websites und Web-Anwendungen mit vollständiger Kontrolle über die Server-Konfiguration.</p>
+                    </div>
+                    <div class="use-case-item glass-card">
+                        <h3>Datenbank-Server</h3>
+                        <p>MySQL, PostgreSQL, MongoDB und andere Datenbanken mit optimierter Performance.</p>
+                    </div>
+                    <div class="use-case-item glass-card">
+                        <h3>Entwicklungsumgebung</h3>
+                        <p>Isolierte Entwicklungs- und Testumgebungen für komplexe Projekte.</p>
+                    </div>
+                    <div class="use-case-item glass-card">
+                        <h3>Game-Server</h3>
+                        <p>Hosting von Minecraft, CS:GO und anderen Game-Servern mit garantierter Performance.</p>
+                    </div>
+                    <div class="use-case-item glass-card">
+                        <h3>VPN-Server</h3>
+                        <p>Private VPN-Lösungen für sichere Verbindungen und anonymes Surfen.</p>
+                    </div>
+                    <div class="use-case-item glass-card">
+                        <h3>Cloud-Storage</h3>
+                        <p>Private Cloud-Lösungen mit Nextcloud, ownCloud oder anderen Plattformen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content glass-card">
+                    <h2>Bereit für maximale Kontrolle?</h2>
+                    <p>Starten Sie noch heute mit einem leistungsstarken VPS</p>
+                    <div class="cta-actions">
+                        <a href="contact.html?product=vps" class="btn btn-primary">Jetzt bestellen</a>
+                        <a href="contact.html" class="btn btn-secondary">Beratung anfordern</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>HexaHost.de</h4>
+                    <p>Zuverlässiges Hosting aus Niederbayern</p>
+                    <div class="footer-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>Niederbayern, Deutschland</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Produkte</h4>
+                    <ul>
+                        <li><a href="vpc.html">Virtual Private Container</a></li>
+                        <li><a href="vps.html">Virtual Private Server</a></li>
+                        <li><a href="mail-gateway.html">Mail Gateway</a></li>
+                        <li><a href="webhosting.html">Webhosting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href="about.html">Über uns</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Hilfe-Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="contact.html">Support-Ticket</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HexaHost.de - Alle Rechte vorbehalten</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
