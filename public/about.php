@@ -17,7 +17,7 @@ includeHeader($page_title, $page_description, $current_page);
             <div class="about-hero-content">
                 <?php
                 generateBreadcrumbs([
-                    ['title' => 'Home', 'url' => 'index.html'],
+                    ['title' => 'Home', 'url' => 'index.php'],
                     ['title' => 'Über uns', 'url' => '']
                 ]);
                 ?>
@@ -233,7 +233,7 @@ includeHeader($page_title, $page_description, $current_page);
                 <h2>Bereit für die Zusammenarbeit?</h2>
                 <p>Lassen Sie uns gemeinsam Ihre Hosting-Lösung entwickeln</p>
                 <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-primary">Kontakt aufnehmen</a>
+                    <a href="contact.php" class="btn btn-primary">Kontakt aufnehmen</a>
                     <a href="vpc.php" class="btn btn-secondary">Produkte entdecken</a>
                 </div>
             </div>

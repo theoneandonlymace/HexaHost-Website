@@ -15,17 +15,17 @@
                 <div class="footer-section">
                     <h4>Produkte</h4>
                     <ul>
-                        <li><a href="vpc.html">Virtual Private Container</a></li>
-                        <li><a href="vps.html">Virtual Private Server</a></li>
-                        <li><a href="mail-gateway.html">Mail Gateway</a></li>
-                        <li><a href="webhosting.html">Webhosting</a></li>
+                        <li><a href="vpc.php">Virtual Private Container</a></li>
+                        <li><a href="vps.php">Virtual Private Server</a></li>
+                        <li><a href="mail-gateway.php">Mail Gateway</a></li>
+                        <li><a href="webhosting.php">Webhosting</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Unternehmen</h4>
                     <ul>
-                        <li><a href="about.html">Über uns</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="about.php">Über uns</a></li>
+                        <li><a href="contact.php">Kontakt</a></li>
                         <li><a href="#">Impressum</a></li>
                         <li><a href="#">Datenschutz</a></li>
                     </ul>
@@ -35,7 +35,7 @@
                     <ul>
                         <li><a href="#">Hilfe-Center</a></li>
                         <li><a href="#">Status</a></li>
-                        <li><a href="contact.html">Support-Ticket</a></li>
+                        <li><a href="contact.php">Support-Ticket</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>

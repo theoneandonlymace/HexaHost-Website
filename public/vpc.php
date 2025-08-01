@@ -17,7 +17,7 @@ includeHeader($page_title, $page_description, $current_page);
             <div class="product-hero-content">
                 <?php
                 generateBreadcrumbs([
-                    ['title' => 'Home', 'url' => 'index.html'],
+                    ['title' => 'Home', 'url' => 'index.php'],
                     ['title' => 'Virtual Private Container', 'url' => '']
                 ]);
                 ?>
@@ -103,7 +103,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Backup inklusive</div>
                         <div class="feature">✓ 24/7 Monitoring</div>
                     </div>
-                    <a href="contact.html?package=vpc-starter" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vpc-starter" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Business Package -->
@@ -146,7 +146,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ 24/7 Monitoring</div>
                         <div class="feature">✓ Snapshot-Funktion</div>
                     </div>
-                    <a href="contact.html?package=vpc-business" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vpc-business" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Professional Package -->
@@ -189,7 +189,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Snapshot-Funktion</div>
                         <div class="feature">✓ Priority Support</div>
                     </div>
-                    <a href="contact.html?package=vpc-professional" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vpc-professional" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Enterprise Package -->
@@ -233,7 +233,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Priority Support</div>
                         <div class="feature">✓ Individuelle Konfiguration</div>
                     </div>
-                    <a href="contact.html?package=vpc-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vpc-enterprise" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
             </div>
         </div>
@@ -332,8 +332,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h2>Bereit für Ihren VPC?</h2>
                 <p>Starten Sie noch heute mit einem Virtual Private Container</p>
                 <div class="cta-actions">
-                    <a href="contact.html?product=vpc" class="btn btn-primary">Jetzt bestellen</a>
-                    <a href="contact.html" class="btn btn-secondary">Beratung anfordern</a>
+                                    <a href="contact.php?product=vpc" class="btn btn-primary">Jetzt bestellen</a>
+                <a href="contact.php" class="btn btn-secondary">Beratung anfordern</a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ includeHeader($page_title, $page_description, $current_page);
             <div class="product-hero-content">
                 <?php
                 generateBreadcrumbs([
-                    ['title' => 'Home', 'url' => 'index.html'],
+                    ['title' => 'Home', 'url' => 'index.php'],
                     ['title' => 'Webhosting', 'url' => '']
                 ]);
                 ?>
@@ -104,7 +104,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ E-Mail-Postfächer</div>
                         <div class="feature">✓ MySQL Datenbank</div>
                     </div>
-                    <a href="contact.html?package=webhosting-starter" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=webhosting-starter" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Business Package -->
@@ -147,7 +147,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ MySQL Datenbanken</div>
                         <div class="feature">✓ Backup-Service</div>
                     </div>
-                    <a href="contact.html?package=webhosting-business" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=webhosting-business" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Professional Package -->
@@ -190,7 +190,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Backup-Service</div>
                         <div class="feature">✓ Priority Support</div>
                     </div>
-                    <a href="contact.html?package=webhosting-professional" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=webhosting-professional" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Enterprise Package -->
@@ -234,7 +234,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Priority Support</div>
                         <div class="feature">✓ Individuelle Konfiguration</div>
                     </div>
-                    <a href="contact.html?package=webhosting-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=webhosting-enterprise" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
             </div>
         </div>
@@ -335,8 +335,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h2>Bereit für Ihr Webhosting?</h2>
                 <p>Starten Sie noch heute mit professionellem Webhosting</p>
                 <div class="cta-actions">
-                    <a href="contact.html?product=webhosting" class="btn btn-primary">Jetzt bestellen</a>
-                    <a href="contact.html" class="btn btn-secondary">Beratung anfordern</a>
+                                    <a href="contact.php?product=webhosting" class="btn btn-primary">Jetzt bestellen</a>
+                <a href="contact.php" class="btn btn-secondary">Beratung anfordern</a>
                 </div>
             </div>
         </div>

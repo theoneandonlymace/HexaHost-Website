@@ -17,7 +17,7 @@ includeHeader($page_title, $page_description, $current_page);
             <div class="product-hero-content">
                 <?php
                 generateBreadcrumbs([
-                    ['title' => 'Home', 'url' => 'index.html'],
+                    ['title' => 'Home', 'url' => 'index.php'],
                     ['title' => 'Virtual Private Server', 'url' => '']
                 ]);
                 ?>
@@ -107,7 +107,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Backup inklusive</div>
                         <div class="feature">✓ 24/7 Monitoring</div>
                     </div>
-                    <a href="contact.html?package=vps-starter" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vps-starter" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Business Package -->
@@ -150,7 +150,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ 24/7 Monitoring</div>
                         <div class="feature">✓ Snapshot-Funktion</div>
                     </div>
-                    <a href="contact.html?package=vps-business" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vps-business" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Professional Package -->
@@ -193,7 +193,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Snapshot-Funktion</div>
                         <div class="feature">✓ Priority Support</div>
                     </div>
-                    <a href="contact.html?package=vps-professional" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vps-professional" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
 
                 <!-- Enterprise Package -->
@@ -237,7 +237,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <div class="feature">✓ Priority Support</div>
                         <div class="feature">✓ Individuelle Konfiguration</div>
                     </div>
-                    <a href="contact.html?package=vps-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                                            <a href="contact.php?package=vps-enterprise" class="btn btn-primary">Jetzt bestellen</a>
                 </div>
             </div>
         </div>
@@ -336,8 +336,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h2>Bereit für Ihren VPS?</h2>
                 <p>Starten Sie noch heute mit einem Virtual Private Server</p>
                 <div class="cta-actions">
-                    <a href="contact.html?product=vps" class="btn btn-primary">Jetzt bestellen</a>
-                    <a href="contact.html" class="btn btn-secondary">Beratung anfordern</a>
+                                    <a href="contact.php?product=vps" class="btn btn-primary">Jetzt bestellen</a>
+                <a href="contact.php" class="btn btn-secondary">Beratung anfordern</a>
                 </div>
             </div>
         </div>

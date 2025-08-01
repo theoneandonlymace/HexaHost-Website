@@ -16,6 +16,20 @@
     RewriteCond %{HTTPS} off
     RewriteCond %{HTTP_HOST} ^(www\.)?hexahost\.de$ [NC]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # HTML zu PHP Weiterleitungen
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^\.]+)\.html$ $1.php [L,R=301]
+    
+    # Direkte HTML zu PHP Weiterleitungen für bekannte Seiten
+    RewriteRule ^index\.html$ index.php [L,R=301]
+    RewriteRule ^about\.html$ about.php [L,R=301]
+    RewriteRule ^contact\.html$ contact.php [L,R=301]
+    RewriteRule ^vpc\.html$ vpc.php [L,R=301]
+    RewriteRule ^vps\.html$ vps.php [L,R=301]
+    RewriteRule ^webhosting\.html$ webhosting.php [L,R=301]
+    RewriteRule ^mail-gateway\.html$ mail-gateway.php [L,R=301]
 </IfModule>
 
 # Konfigurationsdateien schützen

@@ -18,7 +18,7 @@ includeHeader($page_title, $page_description, $current_page, $additional_scripts
             <div class="contact-hero-content">
                 <?php
                 generateBreadcrumbs([
-                    ['title' => 'Home', 'url' => 'index.html'],
+                    ['title' => 'Home', 'url' => 'index.php'],
                     ['title' => 'Kontakt', 'url' => '']
                 ]);
                 ?>

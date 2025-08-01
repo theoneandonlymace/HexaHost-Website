@@ -16,13 +16,13 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <span class="logo-text">HexaHost</span>
                         <span class="logo-tld">.de</span>
                     </a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link <?php echo ($current_page === 'home') ? 'active' : ''; ?>">Home</a></li>
+                    <li><a href="index.php" class="nav-link <?php echo ($current_page === 'home') ? 'active' : ''; ?>">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#" class="nav-link <?php echo (in_array($current_page, ['vpc', 'vps', 'mail-gateway', 'webhosting'])) ? 'active' : ''; ?>">Produkte</a>
                         <ul class="dropdown-menu">
@@ -32,8 +32,8 @@
                             <li><a href="webhosting.php" class="<?php echo ($current_page === 'webhosting') ? 'active' : ''; ?>">Webhosting</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="nav-link <?php echo ($current_page === 'about') ? 'active' : ''; ?>">Über uns</a></li>
-                    <li><a href="contact.html" class="nav-link <?php echo ($current_page === 'contact') ? 'active' : ''; ?>">Kontakt</a></li>
+                    <li><a href="about.php" class="nav-link <?php echo ($current_page === 'about') ? 'active' : ''; ?>">Über uns</a></li>
+                    <li><a href="contact.php" class="nav-link <?php echo ($current_page === 'contact') ? 'active' : ''; ?>">Kontakt</a></li>
                 </ul>
                 <div class="nav-toggle">
                     <span></span>
