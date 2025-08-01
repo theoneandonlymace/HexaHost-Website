@@ -89,7 +89,6 @@
                 } else {
                     // Show error message
                     showNotification(data.message, 'error');
-<<<<<<< HEAD
                     
                     // Highlight missing fields if provided
                     if (data.missing_fields) {
@@ -103,20 +102,11 @@
                             }
                         });
                     }
-=======
->>>>>>> 04d4c58eb4d5f176a9f19520e2976037b9466326
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-<<<<<<< HEAD
                 showNotification('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.', 'error');
-=======
-                showNotification('Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.', 'error');
->>>>>>> 04d4c58eb4d5f176a9f19520e2976037b9466326
-            })
-            .finally(() => {
-                // Reset button
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             });

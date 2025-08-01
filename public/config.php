@@ -35,14 +35,14 @@
 // SMTP Konfiguration - HIER IHRE WERTE EINTRAGEN
 $smtp_config = [
     // SMTP Server-Einstellungen
-    'smtp_host' => 'YOUR_SMTP_HOST',           // z.B. smtp.gmail.com
+    'smtp_host' => 'smtp.gmail.com',           // z.B. smtp.gmail.com
     'smtp_port' => 587,                        // 587 für TLS, 465 für SSL
-    'smtp_username' => 'YOUR_SMTP_USERNAME',   // z.B. info@hexahost.de
-    'smtp_password' => 'YOUR_SMTP_PASSWORD',   // Ihr SMTP-Passwort
+    'smtp_username' => 'test@hexahost.de',     // z.B. info@hexahost.de
+    'smtp_password' => 'your-app-password',    // Ihr SMTP-Passwort
     'smtp_encryption' => 'tls',                // 'tls' oder 'ssl'
     
     // Absender-Einstellungen
-    'from_email' => 'info@hexahost.de',        // Absender-E-Mail
+    'from_email' => 'test@hexahost.de',        // Absender-E-Mail
     'from_name' => 'HexaHost.de Kontaktformular', // Absender-Name
     
     // Empfänger-Einstellungen
