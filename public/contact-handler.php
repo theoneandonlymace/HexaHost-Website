@@ -4,11 +4,21 @@
  * E-Mail-Verarbeitung mit SMTP-Integration und Spam-Schutz
  */
 
+// Session starten für CSRF-Validierung
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Konfiguration laden
 require_once 'config.php';
 
 // Konfiguration verwenden
 $config = getHexaHostConfig();
+
+// CSRF-Token validieren
+function validateCSRFToken($token) {
+    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+}
 
 // CORS Headers für AJAX-Requests
 header('Access-Control-Allow-Origin: *');
@@ -329,6 +339,16 @@ function generateEmailText($data) {
 
 // Hauptverarbeitung
 try {
+    // CSRF-Token validieren
+    if (empty($_POST['csrf_token']) || !validateCSRFToken($_POST['csrf_token'])) {
+        http_response_code(403);
+        echo json_encode([
+            'success' => false, 
+            'message' => 'Ungültige Sitzung. Bitte laden Sie die Seite neu und versuchen Sie es erneut.'
+        ]);
+        exit;
+    }
+    
     // Rate Limiting Check
     $client_ip = $_SERVER['REMOTE_ADDR'];
     if (!checkRateLimit($client_ip)) {

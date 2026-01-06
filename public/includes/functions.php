@@ -3,6 +3,11 @@
  * Helper functions for HexaHost.de
  */
 
+// Start session for CSRF token
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 /**
  * Set page configuration and include header
  * 

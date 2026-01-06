@@ -77,6 +77,10 @@
             })
             .then(response => response.json())
             .then(data => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
                 if (data.success) {
                     // Reset form
                     form.reset();
