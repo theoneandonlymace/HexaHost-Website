@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 HexaHost.de - Alle Rechte vorbehalten</p>
+                <p>&copy; <?php echo date('Y'); ?> HexaHost.de - Alle Rechte vorbehalten</p>
             </div>
         </div>
     </footer>

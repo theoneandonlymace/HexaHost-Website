@@ -15,13 +15,42 @@ require_once 'config.php';
 // Konfiguration verwenden
 $config = getHexaHostConfig();
 
-// CSRF-Token validieren
+// Betreff-Mapping (zentral definiert)
+const SUBJECT_MAP = [
+    'allgemeine-anfrage' => 'Allgemeine Anfrage',
+    'vpc-anfrage' => 'Virtual Private Container Anfrage',
+    'vps-anfrage' => 'Virtual Private Server Anfrage',
+    'mail-gateway-anfrage' => 'Mail Gateway Anfrage',
+    'webhosting-anfrage' => 'Webhosting Anfrage',
+    'support' => 'Technischer Support',
+    'beratung' => 'Persönliche Beratung',
+    'migration' => 'Migration/Umzug',
+    'sonstiges' => 'Sonstige Anfrage'
+];
+
+// CSRF-Token validieren und invalidieren (verhindert Replay-Attacks)
 function validateCSRFToken($token) {
-    return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
+    if (isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token)) {
+        // Token nach erfolgreicher Validierung invalidieren
+        unset($_SESSION['csrf_token']);
+        return true;
+    }
+    return false;
 }
 
-// CORS Headers für AJAX-Requests
-header('Access-Control-Allow-Origin: *');
+// CORS Headers für AJAX-Requests (nur eigene Domain erlauben)
+$allowed_origins = [
+    'https://hexahost.de',
+    'https://www.hexahost.de',
+    'http://localhost',  // Für Entwicklung
+    'http://127.0.0.1'   // Für Entwicklung
+];
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+}
+
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json; charset=utf-8');
@@ -114,20 +143,8 @@ function sendEmail($data) {
         // Empfänger
         $mail->addAddress($config['to_email'], $config['to_name']);
         
-        // Betreff
-        $subject_map = [
-            'allgemeine-anfrage' => 'Allgemeine Anfrage',
-            'vpc-anfrage' => 'Virtual Private Container Anfrage',
-            'vps-anfrage' => 'Virtual Private Server Anfrage',
-            'mail-gateway-anfrage' => 'Mail Gateway Anfrage',
-            'webhosting-anfrage' => 'Webhosting Anfrage',
-            'support' => 'Technischer Support',
-            'beratung' => 'Persönliche Beratung',
-            'migration' => 'Migration/Umzug',
-            'sonstiges' => 'Sonstige Anfrage'
-        ];
-        
-        $subject = isset($subject_map[$data['subject']]) ? $subject_map[$data['subject']] : 'Neue Kontaktanfrage';
+        // Betreff (nutzt zentrale SUBJECT_MAP Konstante)
+        $subject = SUBJECT_MAP[$data['subject']] ?? 'Neue Kontaktanfrage';
         $mail->Subject = '[HexaHost.de] ' . $subject;
         
         // HTML E-Mail-Inhalt
@@ -158,19 +175,8 @@ function sendEmail($data) {
 function sendEmailNative($data) {
     global $config;
     
-    $subject_map = [
-        'allgemeine-anfrage' => 'Allgemeine Anfrage',
-        'vpc-anfrage' => 'Virtual Private Container Anfrage',
-        'vps-anfrage' => 'Virtual Private Server Anfrage',
-        'mail-gateway-anfrage' => 'Mail Gateway Anfrage',
-        'webhosting-anfrage' => 'Webhosting Anfrage',
-        'support' => 'Technischer Support',
-        'beratung' => 'Persönliche Beratung',
-        'migration' => 'Migration/Umzug',
-        'sonstiges' => 'Sonstige Anfrage'
-    ];
-    
-    $subject = isset($subject_map[$data['subject']]) ? $subject_map[$data['subject']] : 'Neue Kontaktanfrage';
+    // Betreff (nutzt zentrale SUBJECT_MAP Konstante)
+    $subject = SUBJECT_MAP[$data['subject']] ?? 'Neue Kontaktanfrage';
     $subject = '[HexaHost.de] ' . $subject;
     
     // Headers für Spam-Schutz
@@ -193,19 +199,8 @@ function sendEmailNative($data) {
 
 // HTML E-Mail-Template
 function generateEmailHTML($data) {
-    $subject_map = [
-        'allgemeine-anfrage' => 'Allgemeine Anfrage',
-        'vpc-anfrage' => 'Virtual Private Container Anfrage',
-        'vps-anfrage' => 'Virtual Private Server Anfrage',
-        'mail-gateway-anfrage' => 'Mail Gateway Anfrage',
-        'webhosting-anfrage' => 'Webhosting Anfrage',
-        'support' => 'Technischer Support',
-        'beratung' => 'Persönliche Beratung',
-        'migration' => 'Migration/Umzug',
-        'sonstiges' => 'Sonstige Anfrage'
-    ];
-    
-    $subject_text = isset($subject_map[$data['subject']]) ? $subject_map[$data['subject']] : 'Neue Kontaktanfrage';
+    // Betreff (nutzt zentrale SUBJECT_MAP Konstante)
+    $subject_text = SUBJECT_MAP[$data['subject']] ?? 'Neue Kontaktanfrage';
     
     $html = '
     <!DOCTYPE html>
@@ -295,19 +290,8 @@ function generateEmailHTML($data) {
 
 // Text-Version der E-Mail
 function generateEmailText($data) {
-    $subject_map = [
-        'allgemeine-anfrage' => 'Allgemeine Anfrage',
-        'vpc-anfrage' => 'Virtual Private Container Anfrage',
-        'vps-anfrage' => 'Virtual Private Server Anfrage',
-        'mail-gateway-anfrage' => 'Mail Gateway Anfrage',
-        'webhosting-anfrage' => 'Webhosting Anfrage',
-        'support' => 'Technischer Support',
-        'beratung' => 'Persönliche Beratung',
-        'migration' => 'Migration/Umzug',
-        'sonstiges' => 'Sonstige Anfrage'
-    ];
-    
-    $subject_text = isset($subject_map[$data['subject']]) ? $subject_map[$data['subject']] : 'Neue Kontaktanfrage';
+    // Betreff (nutzt zentrale SUBJECT_MAP Konstante)
+    $subject_text = SUBJECT_MAP[$data['subject']] ?? 'Neue Kontaktanfrage';
     
     $text = "NEUE KONTAKTANFRAGE - HexaHost.de\n";
     $text .= "=====================================\n\n";

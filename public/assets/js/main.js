@@ -87,28 +87,38 @@
 
     // Header scroll effect - always visible with transparency change
     const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
 
-    window.addEventListener('scroll', function() {
+    // Kombinierter, optimierter Scroll-Handler mit requestAnimationFrame
+    let ticking = false;
+    
+    function handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollTop > 50) {
-            // Scrolled down - make header more opaque
-            header.classList.add('scrolled');
-        } else {
-            // At top - make header more transparent
-            header.classList.remove('scrolled');
+        // Header-Effekt
+        if (header) {
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
-    });
-
-    // Add parallax effect to hero section
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
+        
+        // Parallax-Effekt für Hero
+        if (hero) {
+            const rate = scrollTop * -0.5;
             hero.style.transform = `translateY(${rate}px)`;
-        });
+        }
+        
+        ticking = false;
     }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
+    }, { passive: true });
 
     // Form validation (for contact forms)
     const forms = document.querySelectorAll('form');

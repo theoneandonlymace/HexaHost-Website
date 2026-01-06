@@ -2,8 +2,8 @@
 require_once 'includes/functions.php';
 
 // Page configuration
-$page_title = 'Mail Gateway - HexaHost.de';
-$page_description = 'Professionelle E-Mail-Lösungen für Unternehmen. Spam-Schutz, Virus-Schutz und E-Mail-Archivierung von HexaHost.de';
+$page_title = 'Mail Gateway - Professionelle E-Mail-Lösungen | HexaHost.de';
+$page_description = 'Professionelle Mail Gateway Lösungen für Unternehmen. Spam-Schutz, E-Mail-Archivierung und sichere E-Mail-Kommunikation bei HexaHost.de';
 $current_page = 'mail-gateway';
 
 // Include header
@@ -11,192 +11,302 @@ includeHeader($page_title, $page_description, $current_page);
 ?>
 
 <main>
-    <!-- Breadcrumb -->
-    <div class="container">
-        <?php
-        generateBreadcrumbs([
-            ['title' => 'Home', 'url' => 'index.php'],
-            ['title' => 'Mail Gateway', 'url' => '']
-        ]);
-        ?>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Professionelle <span class="highlight">E-Mail-Lösungen</span>
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="product-hero-content">
+                <?php
+                generateBreadcrumbs([
+                    ['title' => 'Home', 'url' => 'index.php'],
+                    ['title' => 'Mail Gateway', 'url' => '']
+                ]);
+                ?>
+                <h1 class="product-hero-title">
+                    Mail Gateway
+                    <span class="highlight">für Unternehmen</span>
                 </h1>
-                <p class="hero-description">
-                    Schützen Sie Ihr Unternehmen mit unseren professionellen Mail Gateway-Lösungen. 
-                    Von Spam-Schutz bis hin zu E-Mail-Archivierung - wir haben die perfekte Lösung 
-                    für Ihre E-Mail-Sicherheit.
+                <p class="product-hero-description">
+                    Professionelle E-Mail-Infrastruktur mit maximalem Schutz vor Spam und Malware. 
+                    Sichern Sie Ihre geschäftliche Kommunikation mit unseren Mail Gateway Lösungen.
                 </p>
-                <div class="hero-actions">
-                    <a href="#packages" class="btn btn-primary">Pakete entdecken</a>
-                    <a href="contact.php" class="btn btn-secondary">Beratung anfordern</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-card glass-card">
-                    <div class="server-icon">
+                <div class="product-hero-features">
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>Spam & Virus Schutz</span>
+                    </div>
+                    <div class="hero-feature">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
+                        <span>E-Mail Archivierung</span>
                     </div>
-                    <h3>99.9% Spam-Schutz</h3>
-                    <p>Zuverlässige E-Mail-Sicherheit</p>
+                    <div class="hero-feature">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <span>DSGVO-konform</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Mail Gateway Packages -->
+    <section class="packages">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Warum Mail Gateway?</h2>
+                <h2 class="section-title">Mail Gateway Pakete</h2>
                 <p class="section-description">
-                    Professionelle E-Mail-Sicherheit für Ihr Unternehmen
+                    Wählen Sie das passende Mail Gateway Paket für Ihr Unternehmen
                 </p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">
+            <div class="packages-grid">
+                <!-- Starter Package -->
+                <div class="package-card glass-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Mail Starter</h3>
+                        <div class="package-price">
+                            <span class="price">4,99€</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                    </div>
+                    <div class="package-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Postfächer:</span>
+                            <span class="spec-value">5</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Speicher/Postfach:</span>
+                            <span class="spec-value">5 GB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Domains:</span>
+                            <span class="spec-value">1</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">E-Mails/Tag:</span>
+                            <span class="spec-value">500</span>
+                        </div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature">✓ Spam-Filter</div>
+                        <div class="feature">✓ Virus-Schutz</div>
+                        <div class="feature">✓ Webmail</div>
+                        <div class="feature">✓ IMAP/POP3</div>
+                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
+                    </div>
+                    <a href="contact.php?package=mail-starter" class="btn btn-primary">Jetzt bestellen</a>
+                </div>
+
+                <!-- Business Package -->
+                <div class="package-card glass-card featured">
+                    <div class="featured-badge">Beliebt</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Mail Business</h3>
+                        <div class="package-price">
+                            <span class="price">14,99€</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                    </div>
+                    <div class="package-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Postfächer:</span>
+                            <span class="spec-value">25</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Speicher/Postfach:</span>
+                            <span class="spec-value">10 GB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Domains:</span>
+                            <span class="spec-value">3</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">E-Mails/Tag:</span>
+                            <span class="spec-value">2.000</span>
+                        </div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature">✓ Spam-Filter (erweitert)</div>
+                        <div class="feature">✓ Virus-Schutz</div>
+                        <div class="feature">✓ Webmail</div>
+                        <div class="feature">✓ IMAP/POP3</div>
+                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
+                        <div class="feature">✓ E-Mail Archivierung (30 Tage)</div>
+                        <div class="feature">✓ Kalender & Kontakte</div>
+                    </div>
+                    <a href="contact.php?package=mail-business" class="btn btn-primary">Jetzt bestellen</a>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="package-card glass-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Mail Professional</h3>
+                        <div class="package-price">
+                            <span class="price">29,99€</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                    </div>
+                    <div class="package-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Postfächer:</span>
+                            <span class="spec-value">100</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Speicher/Postfach:</span>
+                            <span class="spec-value">25 GB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Domains:</span>
+                            <span class="spec-value">10</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">E-Mails/Tag:</span>
+                            <span class="spec-value">10.000</span>
+                        </div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature">✓ Spam-Filter (KI-gestützt)</div>
+                        <div class="feature">✓ Virus-Schutz</div>
+                        <div class="feature">✓ Webmail</div>
+                        <div class="feature">✓ IMAP/POP3</div>
+                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
+                        <div class="feature">✓ E-Mail Archivierung (1 Jahr)</div>
+                        <div class="feature">✓ Kalender & Kontakte</div>
+                        <div class="feature">✓ ActiveSync für Mobile</div>
+                    </div>
+                    <a href="contact.php?package=mail-professional" class="btn btn-primary">Jetzt bestellen</a>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="package-card glass-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Mail Enterprise</h3>
+                        <div class="package-price">
+                            <span class="price">59,99€</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                    </div>
+                    <div class="package-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Postfächer:</span>
+                            <span class="spec-value">Unbegrenzt</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Speicher/Postfach:</span>
+                            <span class="spec-value">50 GB</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Domains:</span>
+                            <span class="spec-value">Unbegrenzt</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">E-Mails/Tag:</span>
+                            <span class="spec-value">Unbegrenzt</span>
+                        </div>
+                    </div>
+                    <div class="package-features">
+                        <div class="feature">✓ Spam-Filter (KI-gestützt)</div>
+                        <div class="feature">✓ Virus-Schutz</div>
+                        <div class="feature">✓ Webmail</div>
+                        <div class="feature">✓ IMAP/POP3</div>
+                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
+                        <div class="feature">✓ E-Mail Archivierung (10 Jahre)</div>
+                        <div class="feature">✓ Kalender & Kontakte</div>
+                        <div class="feature">✓ ActiveSync für Mobile</div>
+                        <div class="feature">✓ Dedizierte IP</div>
+                        <div class="feature">✓ Priority Support</div>
+                    </div>
+                    <a href="contact.php?package=mail-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Features -->
+    <section class="technical-details">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sicherheit & Features</h2>
+                <p class="section-description">
+                    Maximaler Schutz für Ihre E-Mail-Kommunikation
+                </p>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card glass-card">
+                    <div class="detail-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
                     <h3>Spam-Schutz</h3>
-                    <p>Fortschrittliche Spam-Filterung mit maschinellem Lernen</p>
+                    <p>Mehrstufiger Spam-Filter mit KI-gestützter Erkennung filtert über 99% aller unerwünschten E-Mails zuverlässig heraus.</p>
                 </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">
+                <div class="detail-card glass-card">
+                    <div class="detail-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                            <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
                     <h3>Virus-Schutz</h3>
-                    <p>Echtzeit-Virus-Erkennung und -Entfernung</p>
+                    <p>Echtzeit-Virenscanner prüft alle eingehenden und ausgehenden E-Mails auf Schadsoftware und blockiert gefährliche Anhänge.</p>
                 </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">
+                <div class="detail-card glass-card">
+                    <div class="detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Verschlüsselung</h3>
+                    <p>TLS-Verschlüsselung für sichere Übertragung. Optional S/MIME und PGP für Ende-zu-Ende-verschlüsselte Kommunikation.</p>
+                </div>
+                <div class="detail-card glass-card">
+                    <div class="detail-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14,2 14,8 20,8"/>
                             <line x1="16" y1="13" x2="8" y2="13"/>
                             <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10,9 9,9 8,9"/>
                         </svg>
                     </div>
-                    <h3>E-Mail-Archivierung</h3>
-                    <p>Sichere und konforme E-Mail-Archivierung</p>
-                </div>
-                <div class="feature-card glass-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Professioneller Support rund um die Uhr</p>
+                    <h3>E-Mail Archivierung</h3>
+                    <p>DSGVO-konforme Archivierung aller E-Mails. Revisionssichere Aufbewahrung für rechtliche Anforderungen.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section id="packages" class="packages">
+    <!-- Use Cases -->
+    <section class="use-cases">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Unsere Mail Gateway-Pakete</h2>
+                <h2 class="section-title">Einsatzbereiche</h2>
                 <p class="section-description">
-                    Wählen Sie das perfekte Paket für Ihre E-Mail-Sicherheit
+                    Perfekt für verschiedene Unternehmensanforderungen
                 </p>
             </div>
-            <div class="packages-grid">
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3>Starter</h3>
-                        <div class="package-price">
-                            <span class="price">€29</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Bis zu 1.000 E-Mails/Tag</div>
-                        <div class="feature">✓ Spam-Schutz</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ E-Mail-Archivierung (30 Tage)</div>
-                        <div class="feature">✓ SSL/TLS-Verschlüsselung</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                    </div>
-                    <a href="contact.php?package=mail-gateway-starter" class="btn btn-primary">Jetzt bestellen</a>
+            <div class="use-cases-grid">
+                <div class="use-case-item glass-card">
+                    <h3>Kleine Unternehmen</h3>
+                    <p>Professionelle E-Mail-Adressen mit eigener Domain für ein seriöses Erscheinungsbild Ihres Unternehmens.</p>
                 </div>
-
-                <div class="package-card glass-card featured">
-                    <div class="package-badge">Beliebt</div>
-                    <div class="package-header">
-                        <h3>Business</h3>
-                        <div class="package-price">
-                            <span class="price">€59</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Bis zu 5.000 E-Mails/Tag</div>
-                        <div class="feature">✓ Erweiterter Spam-Schutz</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ E-Mail-Archivierung (90 Tage)</div>
-                        <div class="feature">✓ SSL/TLS-Verschlüsselung</div>
-                        <div class="feature">✓ Backup-Service</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                    </div>
-                    <a href="contact.php?package=mail-gateway-business" class="btn btn-primary">Jetzt bestellen</a>
+                <div class="use-case-item glass-card">
+                    <h3>Mittelstand</h3>
+                    <p>Skalierbare E-Mail-Infrastruktur mit Archivierung und erweitertem Spam-Schutz für wachsende Teams.</p>
                 </div>
-
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3>Professional</h3>
-                        <div class="package-price">
-                            <span class="price">€99</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Bis zu 15.000 E-Mails/Tag</div>
-                        <div class="feature">✓ Premium Spam-Schutz</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ E-Mail-Archivierung (1 Jahr)</div>
-                        <div class="feature">✓ SSL/TLS-Verschlüsselung</div>
-                        <div class="feature">✓ Backup-Service</div>
-                        <div class="feature">✓ Priority Support</div>
-                    </div>
-                    <a href="contact.php?package=mail-gateway-professional" class="btn btn-primary">Jetzt bestellen</a>
+                <div class="use-case-item glass-card">
+                    <h3>Großunternehmen</h3>
+                    <p>Enterprise-Lösungen mit unbegrenzten Postfächern, langfristiger Archivierung und dedizierter Infrastruktur.</p>
                 </div>
-
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3>Enterprise</h3>
-                        <div class="package-price">
-                            <span class="price">€199</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Unbegrenzte E-Mails/Tag</div>
-                        <div class="feature">✓ Enterprise Spam-Schutz</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ E-Mail-Archivierung (unbegrenzt)</div>
-                        <div class="feature">✓ SSL/TLS-Verschlüsselung</div>
-                        <div class="feature">✓ Backup-Service</div>
-                        <div class="feature">✓ Individuelle Konfiguration</div>
-                    </div>
-                    <a href="contact.php?package=mail-gateway-enterprise" class="btn btn-primary">Jetzt bestellen</a>
+                <div class="use-case-item glass-card">
+                    <h3>Behörden & Institutionen</h3>
+                    <p>DSGVO-konforme E-Mail-Lösungen mit höchsten Sicherheitsstandards und revisionssicherer Archivierung.</p>
                 </div>
             </div>
         </div>
@@ -205,8 +315,8 @@ includeHeader($page_title, $page_description, $current_page);
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Bereit für professionelle E-Mail-Sicherheit?</h2>
+            <div class="cta-content glass-card">
+                <h2>Bereit für professionelle E-Mail-Kommunikation?</h2>
                 <p>Starten Sie noch heute mit unserem Mail Gateway</p>
                 <div class="cta-actions">
                     <a href="contact.php?product=mail-gateway" class="btn btn-primary">Jetzt bestellen</a>
@@ -217,4 +327,7 @@ includeHeader($page_title, $page_description, $current_page);
     </section>
 </main>
 
-<?php includeFooter(); ?> 
+<?php
+// Include footer
+includeFooter();
+?>
