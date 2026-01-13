@@ -26,7 +26,7 @@
                     <ul>
                         <li><a href="about.php">Über uns</a></li>
                         <li><a href="contact.php">Kontakt</a></li>
-                        <li><a href="#">Impressum</a></li>
+                        <li><a href="impressum.php">Impressum</a></li>
                         <li><a href="#">Datenschutz</a></li>
                     </ul>
                 </div>
