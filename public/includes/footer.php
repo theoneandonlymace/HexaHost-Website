@@ -29,6 +29,7 @@
                         <li><a href="/impressum">Impressum</a></li>
                         <li><a href="/datenschutz">Datenschutz</a></li>
                         <li><a href="/agb">AGB</a></li>
+                        <li><a href="#" id="openCookieSettings" onclick="CookieConsent.resetConsent(); return false;">Cookie-Einstellungen</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
