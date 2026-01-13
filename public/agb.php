@@ -109,7 +109,7 @@ includeHeader($page_title, $page_description, $current_page);
                         </p>
                         <p>
                             (2) Der Anbieter erbringt seine Leistungen mit einer Verfügbarkeit von 
-                            99,9% im Jahresmittel. Hiervon ausgenommen sind Zeiten, in denen die 
+                            99% im Jahresmittel. Hiervon ausgenommen sind Zeiten, in denen die 
                             Server aufgrund von technischen oder sonstigen Problemen, die nicht im 
                             Einflussbereich des Anbieters liegen (höhere Gewalt, Verschulden Dritter 
                             etc.), nicht erreichbar sind.
@@ -185,7 +185,7 @@ includeHeader($page_title, $page_description, $current_page);
                         </p>
                         <p>
                             (3) Die Kündigung bedarf der Textform (E-Mail ist ausreichend) und 
-                            muss an <a href="mailto:kuendigung@hexahost.de">kuendigung@hexahost.de</a> 
+                            muss an <a href="mailto:support@hexahost.de">support@hexahost.de</a> 
                             gesendet werden.
                         </p>
                         <p>
@@ -232,7 +232,7 @@ includeHeader($page_title, $page_description, $current_page);
                             Inh. Samuel Müller<br>
                             Richard-Miller-Straße 1<br>
                             94051 Hauzenberg<br>
-                            E-Mail: <a href="mailto:widerruf@hexahost.de">widerruf@hexahost.de</a>
+                            E-Mail: <a href="mailto:support@hexahost.de">support@hexahost.de</a>
                         </p>
                         <p>
                             <strong>Folgen des Widerrufs:</strong><br>
