@@ -453,7 +453,7 @@ body {
     list-style: none;
     padding: 0;
     margin-bottom: var(--spacing-lg);
-    text-align: left;
+    text-align: center;
 }
 
 .product-features li {
@@ -461,16 +461,13 @@ body {
     font-size: var(--font-size-sm);
     padding: var(--spacing-xs) 0;
     line-height: 1.5;
-    position: relative;
-    padding-left: var(--spacing-lg);
 }
 
 .product-features li::before {
     content: '•';
     color: var(--primary-color);
     font-weight: bold;
-    position: absolute;
-    left: 0;
+    margin-right: var(--spacing-sm);
 }
 
 .feature {
