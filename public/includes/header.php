@@ -17,8 +17,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index.php">
-                        <span class="logo-text">HexaHost</span>
-                        <span class="logo-tld">.de</span>
+                        <img src="https://cdn.hexahost.de/assets/img/logo/8iFs123BynHQWHI5.png" alt="HexaHost.de Logo" class="logo-image">
                     </a>
                 </div>
                 <ul class="nav-menu">
