@@ -3,9 +3,30 @@
  * Helper functions for HexaHost.de
  */
 
-// Start session for CSRF token
+// Sichere Session-Konfiguration
 if (session_status() === PHP_SESSION_NONE) {
+    // Session-Cookie-Sicherheit
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.cookie_secure', isset($_SERVER['HTTPS']) ? 1 : 0);
+    ini_set('session.cookie_samesite', 'Strict');
+    ini_set('session.use_strict_mode', 1);
+    ini_set('session.use_only_cookies', 1);
+    
     session_start();
+    
+    // Session-ID regenerieren bei Login/wichtigen Aktionen (Schutz vor Session Fixation)
+    if (!isset($_SESSION['initiated'])) {
+        session_regenerate_id(true);
+        $_SESSION['initiated'] = true;
+    }
+}
+
+// PHP Error Display in Produktion deaktivieren
+if (!defined('DEBUG_MODE') || !DEBUG_MODE) {
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL);
+    ini_set('log_errors', 1);
 }
 
 /**

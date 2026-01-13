@@ -97,6 +97,10 @@ includeHeader($page_title, $page_description, $current_page, $additional_scripts
                 </div>
                 <form class="contact-form glass-card" id="contactForm" action="contact-handler.php" method="POST">
                     <input type="hidden" name="csrf_token" value="<?php echo generateCSRFToken(); ?>">
+                    <!-- Honeypot-Feld für Bot-Schutz (versteckt via CSS) -->
+                    <div style="position: absolute; left: -9999px;" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">Vorname *</label>
@@ -143,7 +147,7 @@ includeHeader($page_title, $page_description, $current_page, $additional_scripts
                     <div class="form-group checkbox-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="privacy" name="privacy" required>
-                            Ich habe die <a href="#" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+                            Ich habe die <a href="datenschutz.php" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
                         </label>
                     </div>
                     <div class="form-actions">

@@ -51,9 +51,6 @@
             // Get form data
             const formData = new FormData(form);
             
-            // Add honeypot field (hidden field for bot protection)
-            formData.append('website', ''); // Honeypot field
-            
             // Basic validation
             const data = {};
             for (let [key, value] of formData.entries()) {

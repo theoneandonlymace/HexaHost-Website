@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Konfiguration laden
-require_once 'config.php';
+require_once 'config/config.php';
 
 // Konfiguration verwenden
 $config = getHexaHostConfig();
@@ -111,6 +111,32 @@ function validateEmail($email) {
 // Input-Sanitization
 function sanitizeInput($input) {
     return htmlspecialchars(strip_tags(trim($input)), ENT_QUOTES, 'UTF-8');
+}
+
+// Sichere IP-Adressen-Erkennung (auch hinter Proxies/Cloudflare)
+function getClientIP() {
+    $ip_keys = [
+        'HTTP_CF_CONNECTING_IP',  // Cloudflare
+        'HTTP_X_FORWARDED_FOR',   // Proxy
+        'HTTP_X_REAL_IP',         // Nginx Proxy
+        'REMOTE_ADDR'             // Standard
+    ];
+    
+    foreach ($ip_keys as $key) {
+        if (!empty($_SERVER[$key])) {
+            // Bei X-Forwarded-For kann eine Liste von IPs kommen
+            $ip = explode(',', $_SERVER[$key])[0];
+            $ip = trim($ip);
+            
+            // Validiere IP-Format
+            if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+                return $ip;
+            }
+        }
+    }
+    
+    // Fallback auf REMOTE_ADDR (auch private IPs für lokale Entwicklung)
+    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 }
 
 // SMTP E-Mail-Versand mit PHPMailer
@@ -268,7 +294,7 @@ function generateEmailHTML($data) {
                 
                 <div class="field">
                     <div class="label">IP-Adresse:</div>
-                    <div class="value">' . $_SERVER['REMOTE_ADDR'] . '</div>
+                    <div class="value">' . htmlspecialchars(getClientIP()) . '</div>
                 </div>
                 
                 <div class="field">
@@ -311,7 +337,7 @@ function generateEmailText($data) {
     $text .= "----------\n";
     $text .= $data['message'] . "\n\n";
     
-    $text .= "IP-Adresse: " . $_SERVER['REMOTE_ADDR'] . "\n";
+    $text .= "IP-Adresse: " . getClientIP() . "\n";
     $text .= "Zeitstempel: " . date('d.m.Y H:i:s') . "\n\n";
     
     $text .= "---\n";
@@ -334,7 +360,7 @@ try {
     }
     
     // Rate Limiting Check
-    $client_ip = $_SERVER['REMOTE_ADDR'];
+    $client_ip = getClientIP();
     if (!checkRateLimit($client_ip)) {
         http_response_code(429);
         echo json_encode([
