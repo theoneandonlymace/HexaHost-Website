@@ -245,6 +245,7 @@
          */
         showBanner: function() {
             if (banner) {
+                banner.classList.remove('hide');
                 banner.classList.add('show');
                 banner.setAttribute('aria-hidden', 'false');
                 // Fokus auf ersten Button setzen für Accessibility
