@@ -23,7 +23,7 @@ includeHeader($page_title, $page_description, $current_page);
                 ?>
                 <h1 class="legal-hero-title">Impressum</h1>
                 <p class="legal-hero-description">
-                    Angaben gemäß § 5 DDG
+                    
                 </p>
             </div>
         </div>
