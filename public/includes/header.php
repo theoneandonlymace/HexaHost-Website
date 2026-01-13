@@ -31,21 +31,10 @@
     <meta property="og:description" content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Zuverlässiges Hosting aus Niederbayern'; ?>">
     <meta property="og:locale" content="de_DE">
     
-    <!-- Performance: Critical CSS (inline für schnelleres Rendering) -->
-    <style>
-        /* Critical CSS - Above the fold styles */
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0821;color:#fff;overflow-x:hidden}
-        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,33,.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
-        .nav-container{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:70px}
-        .hero{padding:120px 0 80px;min-height:100vh;display:flex;align-items:center}
-    </style>
-    
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Fonts mit font-display: swap für bessere Performance -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Russo+One&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
