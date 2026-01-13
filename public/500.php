@@ -21,8 +21,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h1>Interner Serverfehler</h1>
                 <p>Es ist ein unerwarteter Fehler aufgetreten. Wir arbeiten bereits an der Lösung.</p>
                 <div class="error-actions">
-                    <a href="index.php" class="btn btn-primary">Zur Startseite</a>
-                    <a href="contact.php" class="btn btn-secondary">Support kontaktieren</a>
+                    <a href="/" class="btn btn-primary">Zur Startseite</a>
+                    <a href="/contact" class="btn btn-secondary">Support kontaktieren</a>
                 </div>
             </div>
         </div>

@@ -320,7 +320,7 @@ includeHeader($page_title, $page_description, $current_page);
                 <p>Starten Sie noch heute mit unserem Mail Gateway</p>
                 <div class="cta-actions">
                     <a href="contact.php?product=mail-gateway" class="btn btn-primary">Jetzt bestellen</a>
-                    <a href="contact.php" class="btn btn-secondary">Beratung anfordern</a>
+                    <a href="/contact" class="btn btn-secondary">Beratung anfordern</a>
                 </div>
             </div>
         </div>

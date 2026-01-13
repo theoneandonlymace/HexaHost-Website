@@ -25,7 +25,7 @@ includeHeader($page_title, $page_description, $current_page);
                 </p>
                 <div class="hero-actions">
                     <a href="#products" class="btn btn-primary">Produkte entdecken</a>
-                    <a href="contact.php" class="btn btn-secondary">Kontakt aufnehmen</a>
+                    <a href="/contact" class="btn btn-secondary">Kontakt aufnehmen</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -72,7 +72,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <li>DDoS Protection</li>
                         <li>99.9% Uptime</li>
                     </ul>
-                    <a href="vpc.php" class="btn btn-primary">Mehr erfahren</a>
+                    <a href="/vpc" class="btn btn-primary">Mehr erfahren</a>
                 </div>
                 <div class="product-card glass-card">
                     <div class="product-icon">
@@ -90,7 +90,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <li>Backup-Service</li>
                         <li>24/7 Monitoring</li>
                     </ul>
-                    <a href="vps.php" class="btn btn-primary">Mehr erfahren</a>
+                    <a href="/vps" class="btn btn-primary">Mehr erfahren</a>
                 </div>
                 <div class="product-card glass-card">
                     <div class="product-icon">
@@ -107,7 +107,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <li>Webmail Interface</li>
                         <li>Mobile Sync</li>
                     </ul>
-                    <a href="mail-gateway.php" class="btn btn-primary">Mehr erfahren</a>
+                    <a href="/mail-gateway" class="btn btn-primary">Mehr erfahren</a>
                 </div>
                 <div class="product-card glass-card">
                     <div class="product-icon">
@@ -127,7 +127,7 @@ includeHeader($page_title, $page_description, $current_page);
                         <li>Automatische Backups</li>
                         <li>PHP & MySQL</li>
                     </ul>
-                    <a href="webhosting.php" class="btn btn-primary">Mehr erfahren</a>
+                    <a href="/webhosting" class="btn btn-primary">Mehr erfahren</a>
                 </div>
             </div>
         </div>
@@ -196,8 +196,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h2>Bereit für zuverlässiges Hosting?</h2>
                 <p>Starten Sie noch heute mit HexaHost und erleben Sie den Unterschied</p>
                 <div class="cta-actions">
-                    <a href="contact.php" class="btn btn-primary">Jetzt starten</a>
-                    <a href="about.php" class="btn btn-secondary">Mehr über uns</a>
+                    <a href="/contact" class="btn btn-primary">Jetzt starten</a>
+                    <a href="/about" class="btn btn-secondary">Mehr über uns</a>
                 </div>
             </div>
         </div>

@@ -23,19 +23,26 @@
     RewriteCond %{HTTP_HOST} ^(www\.)?hexahost\.de$ [NC]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     
-    # HTML zu PHP Weiterleitungen
+    # PHP-Endung aus URLs entfernen
+    # Schritt 1: Wenn .php in URL, weiterleiten auf saubere URL (301)
+    RewriteCond %{THE_REQUEST} \s/([^.]+)\.php[\s?] [NC]
+    RewriteCond %{REQUEST_URI} !^/(contact-handler|config/)
+    RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+    
+    # Schritt 2: index.php zur Startseite weiterleiten
+    RewriteCond %{THE_REQUEST} \s/index\.php[\s?] [NC]
+    RewriteRule ^index\.php$ / [R=301,L]
+    
+    # Schritt 3: Saubere URLs intern auf .php-Dateien umleiten
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([^\.]+)\.html$ $1.php [L,R=301]
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+)$ $1.php [L]
     
-    # Direkte HTML zu PHP Weiterleitungen für bekannte Seiten
-    RewriteRule ^index\.html$ index.php [L,R=301]
-    RewriteRule ^about\.html$ about.php [L,R=301]
-    RewriteRule ^contact\.html$ contact.php [L,R=301]
-    RewriteRule ^vpc\.html$ vpc.php [L,R=301]
-    RewriteRule ^vps\.html$ vps.php [L,R=301]
-    RewriteRule ^webhosting\.html$ webhosting.php [L,R=301]
-    RewriteRule ^mail-gateway\.html$ mail-gateway.php [L,R=301]
+    # HTML zu PHP Weiterleitungen (Legacy-Support)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([^\.]+)\.html$ $1 [L,R=301]
 </IfModule>
 
 # Konfigurationsdateien schützen

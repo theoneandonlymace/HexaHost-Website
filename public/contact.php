@@ -147,7 +147,7 @@ includeHeader($page_title, $page_description, $current_page, $additional_scripts
                     <div class="form-group checkbox-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="privacy" name="privacy" required>
-                            Ich habe die <a href="datenschutz.php" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+                            Ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
                         </label>
                     </div>
                     <div class="form-actions">

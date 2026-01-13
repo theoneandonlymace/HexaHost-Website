@@ -418,7 +418,7 @@ includeHeader($page_title, $page_description, $current_page);
                         </p>
                         <p>
                             (2) Einzelheiten zur Datenverarbeitung sind in der 
-                            <a href="datenschutz.php">Datenschutzerklärung</a> geregelt.
+                            <a href="/datenschutz">Datenschutzerklärung</a> geregelt.
                         </p>
                         <p>
                             (3) Sofern der Kunde personenbezogene Daten Dritter auf den gemieteten 

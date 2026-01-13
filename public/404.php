@@ -21,8 +21,8 @@ includeHeader($page_title, $page_description, $current_page);
                 <h1>Seite nicht gefunden</h1>
                 <p>Die angeforderte Seite existiert leider nicht oder wurde verschoben.</p>
                 <div class="error-actions">
-                    <a href="index.php" class="btn btn-primary">Zur Startseite</a>
-                    <a href="contact.php" class="btn btn-secondary">Kontakt aufnehmen</a>
+                    <a href="/" class="btn btn-primary">Zur Startseite</a>
+                    <a href="/contact" class="btn btn-secondary">Kontakt aufnehmen</a>
                 </div>
             </div>
         </div>

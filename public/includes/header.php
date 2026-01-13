@@ -16,23 +16,23 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.php">
+                    <a href="/">
                         <img src="https://cdn.hexahost.de/assets/img/logo/8iFs123BynHQWHI5.png" alt="HexaHost.de Logo" class="logo-image">
                     </a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.php" class="nav-link <?php echo ($current_page === 'home') ? 'active' : ''; ?>">Home</a></li>
+                    <li><a href="/" class="nav-link <?php echo ($current_page === 'home') ? 'active' : ''; ?>">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#" class="nav-link <?php echo (in_array($current_page, ['vpc', 'vps', 'mail-gateway', 'webhosting'])) ? 'active' : ''; ?>">Produkte</a>
                         <ul class="dropdown-menu">
-                            <li><a href="vpc.php" class="<?php echo ($current_page === 'vpc') ? 'active' : ''; ?>">Virtual Private Container</a></li>
-                            <li><a href="vps.php" class="<?php echo ($current_page === 'vps') ? 'active' : ''; ?>">Virtual Private Server</a></li>
-                            <li><a href="mail-gateway.php" class="<?php echo ($current_page === 'mail-gateway') ? 'active' : ''; ?>">Mail Gateway</a></li>
-                            <li><a href="webhosting.php" class="<?php echo ($current_page === 'webhosting') ? 'active' : ''; ?>">Webhosting</a></li>
+                            <li><a href="/vpc" class="<?php echo ($current_page === 'vpc') ? 'active' : ''; ?>">Virtual Private Container</a></li>
+                            <li><a href="/vps" class="<?php echo ($current_page === 'vps') ? 'active' : ''; ?>">Virtual Private Server</a></li>
+                            <li><a href="/mail-gateway" class="<?php echo ($current_page === 'mail-gateway') ? 'active' : ''; ?>">Mail Gateway</a></li>
+                            <li><a href="/webhosting" class="<?php echo ($current_page === 'webhosting') ? 'active' : ''; ?>">Webhosting</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.php" class="nav-link <?php echo ($current_page === 'about') ? 'active' : ''; ?>">Über uns</a></li>
-                    <li><a href="contact.php" class="nav-link <?php echo ($current_page === 'contact') ? 'active' : ''; ?>">Kontakt</a></li>
+                    <li><a href="/about" class="nav-link <?php echo ($current_page === 'about') ? 'active' : ''; ?>">Über uns</a></li>
+                    <li><a href="/contact" class="nav-link <?php echo ($current_page === 'contact') ? 'active' : ''; ?>">Kontakt</a></li>
                 </ul>
                 <div class="nav-toggle">
                     <span></span>
