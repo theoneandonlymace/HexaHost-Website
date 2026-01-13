@@ -28,14 +28,15 @@
                         <li><a href="contact.php">Kontakt</a></li>
                         <li><a href="impressum.php">Impressum</a></li>
                         <li><a href="datenschutz.php">Datenschutz</a></li>
+                        <li><a href="agb.php">AGB</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Support</h4>
                     <ul>
-                        <li><a href="#">Hilfe-Center</a></li>
-                        <li><a href="#">Status</a></li>
-                        <li><a href="contact.php">Support-Ticket</a></li>
+                        <li><a href="https://shop.hexahost.de/clientarea.php">Kunden-Center</a></li>
+                        <li><a href="https://shop.hexahost.de/serverstatus.php">Status</a></li>
+                        <li><a href="https://shop.hexahost.de/supporttickets.php">Support-Ticket</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
