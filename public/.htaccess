@@ -49,16 +49,14 @@
 </Files>
 
 # Logs-Verzeichnis schützen
-<Directory "logs">
-    Order allow,deny
-    Deny from all
-</Directory>
+<IfModule mod_rewrite.c>
+    RewriteRule ^logs/ - [F,L]
+</IfModule>
 
 # Vendor-Verzeichnis schützen
-<Directory "vendor">
-    Order allow,deny
-    Deny from all
-</Directory>
+<IfModule mod_rewrite.c>
+    RewriteRule ^vendor/ - [F,L]
+</IfModule>
 
 # Cache-Header für statische Dateien
 <IfModule mod_expires.c>
