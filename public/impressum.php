@@ -67,7 +67,7 @@ includeHeader($page_title, $page_description, $current_page);
                     <div class="legal-block">
                         <p>
                             Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
-                            <strong>[UST-ID, z.B. DE458741546]</strong>
+                            <strong>DE458741546</strong>
                         </p>
                     </div>
                 </div>
