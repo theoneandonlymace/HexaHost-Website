@@ -251,9 +251,44 @@
         }
     }
 
+    // FAQ Accordion functionality
+    function initFAQ() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            if (question && answer) {
+                question.addEventListener('click', function() {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('open')) {
+                            otherItem.classList.remove('open');
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            if (otherAnswer) {
+                                otherAnswer.style.maxHeight = null;
+                            }
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('open');
+                    
+                    if (item.classList.contains('open')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            }
+        });
+    }
+
     // Initialize all features when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
         initDarkMode();
+        initFAQ();
         
         // Add loading animation complete class
         document.body.classList.add('loaded');
