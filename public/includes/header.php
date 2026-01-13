@@ -3,13 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($page_title) ? $page_title : 'HexaHost.de - Zuverlässiges Hosting aus Niederbayern'; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Performance: DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.hexahost.de">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.hexahost.de" crossorigin>
+    
+    <!-- Performance: Preload kritischer Ressourcen -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    
+    <title><?php echo isset($page_title) ? htmlspecialchars($page_title) : 'HexaHost.de - Zuverlässiges Hosting aus Niederbayern'; ?></title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'HexaHost.de - Zuverlässiges und preiswertes Hosting aus Niederbayern. VPS, VPC, Mail Gateway und Webhosting Lösungen.'; ?>">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="HexaHost.de">
+    <meta name="theme-color" content="#0d0821">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HexaHost.de">
+    <meta property="og:title" content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'HexaHost.de'; ?>">
+    <meta property="og:description" content="<?php echo isset($page_description) ? htmlspecialchars($page_description) : 'Zuverlässiges Hosting aus Niederbayern'; ?>">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Performance: Critical CSS (inline für schnelleres Rendering) -->
+    <style>
+        /* Critical CSS - Above the fold styles */
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0821;color:#fff;overflow-x:hidden}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,8,33,.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
+        .nav-container{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+        .hero{padding:120px 0 80px;min-height:100vh;display:flex;align-items:center}
+    </style>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    
+    <!-- Fonts mit font-display: swap für bessere Performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Russo+One&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta name="description" content="<?php echo isset($page_description) ? $page_description : 'HexaHost.de - Zuverlässiges und preiswertes Hosting aus Niederbayern. VPS, VPC, Mail Gateway und Webhosting Lösungen.'; ?>">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    
+    <!-- Canonical URL (falls gesetzt) -->
+    <?php if (isset($canonical_url)): ?>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
+    <?php endif; ?>
 </head>
 <body>
     <header class="header">

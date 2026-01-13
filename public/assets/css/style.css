@@ -1855,3 +1855,292 @@ body {
         padding: calc(var(--header-height) + var(--spacing-xl)) 0 var(--spacing-xl);
     }
 }
+
+/* ==========================================
+   COOKIE CONSENT BANNER
+   ========================================== */
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: rgba(13, 8, 33, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cookie-consent.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-consent.hide {
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cookie-consent-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.cookie-consent-content {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    flex: 1;
+    min-width: 300px;
+}
+
+.cookie-consent-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    color: var(--primary-color);
+}
+
+.cookie-consent-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cookie-consent-text h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.cookie-consent-text p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookie-consent-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cookie-consent-text a:hover {
+    text-decoration: underline;
+}
+
+.cookie-consent-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.cookie-consent-actions .btn {
+    white-space: nowrap;
+}
+
+.btn-text {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--transition-base);
+}
+
+.btn-text:hover {
+    color: var(--primary-color);
+}
+
+/* Cookie Settings Panel */
+.cookie-settings-panel {
+    border-top: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cookie-settings-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.cookie-settings-content h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.cookie-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-option:last-of-type {
+    border-bottom: none;
+}
+
+.cookie-option-info {
+    flex: 1;
+    padding-right: var(--spacing-lg);
+}
+
+.cookie-option-info strong {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cookie-option-info p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Cookie Toggle Switch */
+.cookie-toggle {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.cookie-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cookie-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+    transition: all var(--transition-base);
+}
+
+.cookie-toggle-slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    transition: all var(--transition-base);
+}
+
+.cookie-toggle input:checked + .cookie-toggle-slider {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color-1));
+}
+
+.cookie-toggle input:checked + .cookie-toggle-slider::before {
+    transform: translateX(24px);
+}
+
+.cookie-toggle.disabled .cookie-toggle-slider {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.cookie-toggle input:focus + .cookie-toggle-slider {
+    box-shadow: 0 0 0 3px rgba(255, 81, 249, 0.3);
+}
+
+.cookie-settings-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: flex-end;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cookie Consent Responsive */
+@media (max-width: 768px) {
+    .cookie-consent-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-lg);
+    }
+    
+    .cookie-consent-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cookie-consent-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .cookie-consent-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cookie-consent-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cookie-settings-actions {
+        flex-direction: column;
+    }
+    
+    .cookie-settings-actions .btn {
+        width: 100%;
+    }
+    
+    .cookie-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    
+    .cookie-option-info {
+        padding-right: 0;
+    }
+}
