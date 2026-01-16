@@ -1,6 +1,8 @@
-# HexaHost.de - Hosting Website
+# HexaHost.de - Frontend
 
 Eine moderne und umfangreiche Website für das Hosting-Unternehmen HexaHost.de aus Niederbayern.
+
+> ℹ️ **Hinweis:** Dieses Projekt benötigt das [HexaHost-Backend](../HexaHost-Backend) Repository für die vollständige Funktionalität. Das Backend enthält wiederverwendbare PHP-Templates, JavaScript-Module, CSS-Styles und Konfigurationsdateien.
 
 ## 🚀 Features
 
@@ -52,52 +54,54 @@ Eine moderne und umfangreiche Website für das Hosting-Unternehmen HexaHost.de a
 ## 📁 Projektstruktur
 
 ```
-HexaHost-Website/
-├── public/                     # Webroot
-│   ├── index.php               # Startseite
-│   ├── vpc.php                 # Virtual Private Container
-│   ├── vps.php                 # Virtual Private Server
-│   ├── mail-gateway.php        # Mail Gateway
-│   ├── webhosting.php          # Webhosting
-│   ├── about.php               # Über uns
-│   ├── contact.php             # Kontaktseite
-│   ├── contact-handler.php     # Kontaktformular-Backend
-│   ├── impressum.php           # Impressum
-│   ├── datenschutz.php         # Datenschutzerklärung
-│   ├── agb.php                 # Allgemeine Geschäftsbedingungen
-│   ├── 404.php                 # Fehlerseite 404
-│   ├── 500.php                 # Fehlerseite 500
-│   ├── robots.txt              # SEO Robots
-│   ├── sitemap.xml             # SEO Sitemap
-│   ├── favicon.svg             # Website Icon
-│   ├── .htaccess               # Apache Konfiguration
-│   ├── composer.json           # PHP Dependencies
-│   ├── config/
-│   │   ├── config.php          # Allgemeine Konfiguration
-│   │   └── mail-config.php     # E-Mail-Konfiguration
-│   ├── includes/
-│   │   ├── header.php          # Header-Template
-│   │   ├── footer.php          # Footer-Template
-│   │   └── functions.php       # Hilfsfunktionen
-│   └── assets/
+HexaHost-Frontend/
+├── public/                         # Webroot
+│   ├── index.php                   # Startseite
+│   ├── vpc.php                     # Virtual Private Container
+│   ├── vps.php                     # Virtual Private Server
+│   ├── mail-gateway.php            # Mail Gateway
+│   ├── webhosting.php              # Webhosting
+│   ├── about.php                   # Über uns
+│   ├── contact.php                 # Kontaktseite
+│   ├── contact-handler.php         # Kontaktformular-Backend
+│   ├── impressum.php               # Impressum
+│   ├── datenschutz.php             # Datenschutzerklärung
+│   ├── agb.php                     # Allgemeine Geschäftsbedingungen
+│   ├── 404.php                     # Fehlerseite 404
+│   ├── 500.php                     # Fehlerseite 500
+│   ├── robots.txt                  # SEO Robots
+│   ├── sitemap.xml                 # SEO Sitemap
+│   ├── favicon.svg                 # Website Icon
+│   ├── .htaccess                   # Apache Konfiguration
+│   ├── composer.json               # PHP Dependencies
+│   ├── config/                     # ⬅ vom Backend
+│   │   ├── config.php              # Allgemeine Konfiguration
+│   │   └── mail-config.php         # E-Mail-Konfiguration
+│   ├── includes/                   # ⬅ vom Backend
+│   │   ├── header.php              # Header-Template
+│   │   ├── footer.php              # Footer-Template
+│   │   └── functions.php           # Hilfsfunktionen
+│   └── assets/                     # ⬅ vom Backend
 │       ├── css/
-│       │   └── style.css       # Hauptstyles
+│       │   └── style.css           # Hauptstyles
 │       └── js/
-│           ├── main.js         # Haupt-JavaScript
-│           ├── contact.js      # Kontaktformular-Logik
-│           └── cookie-consent.js # Cookie-Banner
-├── docs/                       # Dokumentation
+│           ├── main.js             # Haupt-JavaScript
+│           ├── contact.js          # Kontaktformular-Logik
+│           └── cookie-consent.js   # Cookie-Banner
+├── docs/                           # Dokumentation
 │   ├── KONTAKTFORMULAR-STATUS.md
 │   ├── README-EMAIL-SETUP.md
 │   ├── README-OPTIMIZATION.md
 │   └── README-STRUCTURE.md
 ├── scripts/
-│   └── test-email.php          # E-Mail-Test-Script
+│   └── test-email.php              # E-Mail-Test-Script
 ├── .github/
-│   └── ISSUE_TEMPLATE/         # GitHub Issue Templates
-├── .gitignore                  # Git Ignore Rules
-└── README.md                   # Diese Datei
+│   └── ISSUE_TEMPLATE/             # GitHub Issue Templates
+├── .gitignore                      # Git Ignore Rules
+└── README.md                       # Diese Datei
 ```
+
+> 📌 Die mit `⬅ vom Backend` markierten Ordner werden aus dem [HexaHost-Backend](../HexaHost-Backend) Repository kopiert.
 
 ## 🎨 Design-System
 
@@ -125,39 +129,61 @@ HexaHost-Website/
 - PHP 8.0 oder höher
 - Composer (für PHPMailer)
 - Apache mit mod_rewrite (für .htaccess)
+- [HexaHost-Backend](../HexaHost-Backend) Repository
 
 ### Installation
 
-1. **Repository klonen**
+1. **Repositories klonen**
    ```bash
-   git clone <repository-url>
-   cd HexaHost-Website
+   git clone <frontend-repository-url> HexaHost-Frontend
+   git clone <backend-repository-url> HexaHost-Backend
    ```
 
-2. **PHP Dependencies installieren**
+2. **Backend-Dateien integrieren**
    ```bash
-   cd public
+   # Aus dem Projekt-Root-Verzeichnis
+   cp -r HexaHost-Backend/assets/* HexaHost-Frontend/public/assets/
+   cp -r HexaHost-Backend/config/* HexaHost-Frontend/public/config/
+   cp -r HexaHost-Backend/includes/* HexaHost-Frontend/public/includes/
+   ```
+
+3. **PHP Dependencies installieren**
+   ```bash
+   cd HexaHost-Frontend/public
    composer install
    ```
 
-3. **Konfiguration anpassen**
+4. **Konfiguration anpassen**
    ```bash
-   cp public/config/mail-config.php.example public/config/mail-config.php
-   # Dann mail-config.php mit SMTP-Daten bearbeiten
+   # mail-config.php mit SMTP-Daten bearbeiten
+   nano config/mail-config.php
    ```
 
-4. **Lokaler Development Server**
+5. **Lokaler Development Server**
    ```bash
    php -S localhost:8000 -t public
    ```
 
-5. **Website öffnen**
+6. **Website öffnen**
    ```
    http://localhost:8000
    ```
 
 ### Produktion
 Für den Produktivbetrieb `public/` als Webroot konfigurieren.
+
+## 🔗 Backend-Integration
+
+Das Backend-Repository enthält folgende wiederverwendbare Komponenten:
+
+| Komponente | Pfad | Beschreibung |
+|------------|------|--------------|
+| **CSS** | `assets/css/style.css` | Haupt-Stylesheet mit Design-System |
+| **JavaScript** | `assets/js/*.js` | Navigation, Kontaktformular, Cookie-Banner |
+| **PHP-Templates** | `includes/*.php` | Header, Footer, Hilfsfunktionen |
+| **Konfiguration** | `config/*.php` | SMTP, E-Mail, Sicherheit |
+
+Detaillierte Informationen zu den Backend-Komponenten finden Sie in der [Backend-README](../HexaHost-Backend/README.md).
 
 ## 📧 E-Mail-Konfiguration
 
@@ -212,7 +238,7 @@ Siehe `docs/README-EMAIL-SETUP.md` für detaillierte Anweisungen.
 ## 🔧 Anpassungen
 
 ### Farben ändern
-CSS Custom Properties in `:root` anpassen:
+CSS Custom Properties in `:root` anpassen (in `assets/css/style.css` vom Backend):
 ```css
 :root {
     --background-color: #0d0821;
@@ -224,7 +250,7 @@ CSS Custom Properties in `:root` anpassen:
 ```
 
 ### Inhalte anpassen
-Texte und Preise direkt in den PHP-Dateien ändern.
+Texte und Preise direkt in den PHP-Dateien im `public/`-Verzeichnis ändern.
 
 ### Neue Pakete hinzufügen
 Paket-Cards in den entsprechenden Produktseiten duplizieren und anpassen.
