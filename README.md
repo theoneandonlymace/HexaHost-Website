@@ -273,7 +273,22 @@ Paket-Cards in den entsprechenden Produktseiten duplizieren und anpassen.
 
 ## 📄 Lizenz
 
-Alle Rechte vorbehalten HexaHost.de
+Dieses Projekt ist unter der **Business Source License 1.1 (BSL)** lizenziert.
+
+### Was bedeutet das?
+
+| Erlaubt | Nicht erlaubt (ohne kommerzielle Lizenz) |
+|---------|------------------------------------------|
+| ✅ Code ansehen & lernen | ❌ Kommerzieller Einsatz |
+| ✅ Privater, nicht-kommerzieller Gebrauch | ❌ Nutzung für SaaS/Hosting-Dienste |
+| ✅ Modifikationen für persönliche Zwecke | ❌ Unternehmensnutzung |
+| ✅ Akademische/Bildungszwecke | ❌ Weiterverkauf oder Sublizenzierung |
+
+**Änderungsdatum:** Am 16. Januar 2030 wird der Code automatisch unter der **GPL v3** verfügbar.
+
+**Kommerzielle Lizenz:** Für kommerzielle Nutzung kontaktieren Sie bitte kontakt@hexahost.de
+
+Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
 
 ## 🤝 Beitragen
 
