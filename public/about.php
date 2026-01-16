@@ -10,7 +10,7 @@ $current_page = 'about';
 includeHeader($page_title, $page_description, $current_page);
 ?>
 
-<main>
+<main id="main-content">
     <!-- About Hero -->
     <section class="about-hero">
         <div class="container">

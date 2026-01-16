@@ -10,7 +10,7 @@ $current_page = 'mail-gateway';
 includeHeader($page_title, $page_description, $current_page);
 ?>
 
-<main>
+<main id="main-content">
     <!-- Product Hero -->
     <section class="product-hero">
         <div class="container">

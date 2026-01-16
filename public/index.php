@@ -10,7 +10,7 @@ $current_page = 'home';
 includeHeader($page_title, $page_description, $current_page);
 ?>
 
-<main>
+<main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
@@ -170,11 +170,11 @@ includeHeader($page_title, $page_description, $current_page);
                 <div class="feature-item glass-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M17 7l-5-5-5 5M17 17l-5 5-5-5"/>
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3>Faire Preise</h3>
-                    <p>Transparent kalkulierte Preise ohne versteckte Kosten</p>
+                    <h3>Maximale Sicherheit</h3>
+                    <p>DDoS-Schutz, SSL-Zertifikate und regelmäßige Backups inklusive</p>
                 </div>
                 <div class="feature-item glass-card">
                     <div class="feature-icon">

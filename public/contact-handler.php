@@ -12,6 +12,11 @@ if (session_status() === PHP_SESSION_NONE) {
 // Konfiguration laden
 require_once 'config/config.php';
 
+// PHPMailer Autoload (falls via Composer installiert)
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 // Konfiguration verwenden
 $config = getHexaHostConfig();
 
@@ -305,7 +310,7 @@ function generateEmailHTML($data) {
             
             <div class="footer">
                 <p>Diese E-Mail wurde automatisch vom HexaHost.de Kontaktformular generiert.</p>
-                <p>© 2024 HexaHost.de - Alle Rechte vorbehalten</p>
+                <p>© ' . date('Y') . ' HexaHost.de - Alle Rechte vorbehalten</p>
             </div>
         </div>
     </body>
@@ -342,7 +347,7 @@ function generateEmailText($data) {
     
     $text .= "---\n";
     $text .= "Diese E-Mail wurde automatisch vom HexaHost.de Kontaktformular generiert.\n";
-    $text .= "© 2024 HexaHost.de - Alle Rechte vorbehalten";
+    $text .= "© " . date('Y') . " HexaHost.de - Alle Rechte vorbehalten";
     
     return $text;
 }

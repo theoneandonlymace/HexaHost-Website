@@ -11,7 +11,7 @@ $additional_scripts = ['assets/js/contact.js'];
 includeHeader($page_title, $page_description, $current_page, $additional_scripts);
 ?>
 
-<main>
+<main id="main-content">
     <!-- Contact Hero -->
     <section class="contact-hero">
         <div class="container">

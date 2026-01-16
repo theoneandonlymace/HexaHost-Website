@@ -10,7 +10,7 @@ $current_page = 'datenschutz';
 includeHeader($page_title, $page_description, $current_page);
 ?>
 
-<main>
+<main id="main-content">
     <!-- Datenschutz Hero -->
     <section class="legal-hero">
         <div class="container">

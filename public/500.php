@@ -13,7 +13,7 @@ http_response_code(500);
 includeHeader($page_title, $page_description, $current_page);
 ?>
 
-<main>
+<main id="main-content">
     <section class="error-page">
         <div class="container">
             <div class="error-content glass-card">
