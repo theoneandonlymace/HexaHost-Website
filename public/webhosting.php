@@ -1,9 +1,14 @@
 <?php
 require_once 'includes/functions.php';
+require_once 'config/products-config.php';
+
+// Produkt-Daten aus Config laden
+$product = getProduct('webhosting');
+$packages = getProductPackages('webhosting');
 
 // Page configuration
-$page_title = 'Webhosting - Klassisches Hosting für Websites | HexaHost.de';
-$page_description = 'Webhosting mit PHP, MySQL und SSL-Zertifikaten. Klassisches Hosting für Websites ab 1,99€/Monat bei HexaHost.de';
+$page_title = $product['page_title'];
+$page_description = $product['page_description'];
 $current_page = 'webhosting';
 
 // Include header
@@ -66,176 +71,7 @@ includeHeader($page_title, $page_description, $current_page);
                 </p>
             </div>
             <div class="packages-grid">
-                <!-- Starter Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Webhosting Starter</h3>
-                        <div class="package-price">
-                            <span class="price">1,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Webspace:</span>
-                            <span class="spec-value">5 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mail-Postfächer:</span>
-                            <span class="spec-value">5</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Datenbanken:</span>
-                            <span class="spec-value">1 MySQL</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">10 GB</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ cPanel/Webmin</div>
-                        <div class="feature">✓ PHP 8.1</div>
-                        <div class="feature">✓ SSL-Zertifikat</div>
-                        <div class="feature">✓ E-Mail-Postfächer</div>
-                        <div class="feature">✓ MySQL Datenbank</div>
-                    </div>
-                                            <a href="contact.php?package=webhosting-starter" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Business Package -->
-                <div class="package-card glass-card featured">
-                    <div class="featured-badge">Beliebt</div>
-                    <div class="package-header">
-                        <h3 class="package-name">Webhosting Business</h3>
-                        <div class="package-price">
-                            <span class="price">4,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Webspace:</span>
-                            <span class="spec-value">20 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">5</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mail-Postfächer:</span>
-                            <span class="spec-value">25</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Datenbanken:</span>
-                            <span class="spec-value">5 MySQL</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">50 GB</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ cPanel/Webmin</div>
-                        <div class="feature">✓ PHP 8.1</div>
-                        <div class="feature">✓ SSL-Zertifikat</div>
-                        <div class="feature">✓ E-Mail-Postfächer</div>
-                        <div class="feature">✓ MySQL Datenbanken</div>
-                        <div class="feature">✓ Backup-Service</div>
-                    </div>
-                                            <a href="contact.php?package=webhosting-business" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Professional Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Webhosting Professional</h3>
-                        <div class="package-price">
-                            <span class="price">9,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Webspace:</span>
-                            <span class="spec-value">50 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mail-Postfächer:</span>
-                            <span class="spec-value">100</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Datenbanken:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">200 GB</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ cPanel/Webmin</div>
-                        <div class="feature">✓ PHP 8.1</div>
-                        <div class="feature">✓ SSL-Zertifikat</div>
-                        <div class="feature">✓ E-Mail-Postfächer</div>
-                        <div class="feature">✓ MySQL Datenbanken</div>
-                        <div class="feature">✓ Backup-Service</div>
-                        <div class="feature">✓ Priority Support</div>
-                    </div>
-                                            <a href="contact.php?package=webhosting-professional" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Enterprise Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Webhosting Enterprise</h3>
-                        <div class="package-price">
-                            <span class="price">19,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Webspace:</span>
-                            <span class="spec-value">100 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mail-Postfächer:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Datenbanken:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">500 GB</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ cPanel/Webmin</div>
-                        <div class="feature">✓ PHP 8.1</div>
-                        <div class="feature">✓ SSL-Zertifikat</div>
-                        <div class="feature">✓ E-Mail-Postfächer</div>
-                        <div class="feature">✓ MySQL Datenbanken</div>
-                        <div class="feature">✓ Backup-Service</div>
-                        <div class="feature">✓ Priority Support</div>
-                        <div class="feature">✓ Individuelle Konfiguration</div>
-                    </div>
-                                            <a href="contact.php?package=webhosting-enterprise" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
+                <?php echo renderAllPackages('webhosting'); ?>
             </div>
         </div>
     </section>
@@ -346,4 +182,4 @@ includeHeader($page_title, $page_description, $current_page);
 <?php
 // Include footer
 includeFooter();
-?> 
+?>

@@ -1,9 +1,14 @@
 <?php
 require_once 'includes/functions.php';
+require_once 'config/products-config.php';
+
+// Produkt-Daten aus Config laden
+$product = getProduct('vpc');
+$packages = getProductPackages('vpc');
 
 // Page configuration
-$page_title = 'Virtual Private Container - Effiziente LXC Container | HexaHost.de';
-$page_description = 'Virtual Private Container auf Proxmox LXC-Basis. Effiziente und preiswerte Container-Lösungen ab 4,99€/Monat bei HexaHost.de';
+$page_title = $product['page_title'];
+$page_description = $product['page_description'];
 $current_page = 'vpc';
 
 // Include header
@@ -65,176 +70,7 @@ includeHeader($page_title, $page_description, $current_page);
                 </p>
             </div>
             <div class="packages-grid">
-                <!-- Starter Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPC Starter</h3>
-                        <div class="package-price">
-                            <span class="price">4,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">1 vCore</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">1 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">20 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">1 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox LXC Container</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Backup inklusive</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                    </div>
-                                            <a href="contact.php?package=vpc-starter" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Business Package -->
-                <div class="package-card glass-card featured">
-                    <div class="featured-badge">Beliebt</div>
-                    <div class="package-header">
-                        <h3 class="package-name">VPC Business</h3>
-                        <div class="package-price">
-                            <span class="price">9,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">2 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">4 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">80 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">3 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox LXC Container</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Tägliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                    </div>
-                                            <a href="contact.php?package=vpc-business" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Professional Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPC Professional</h3>
-                        <div class="package-price">
-                            <span class="price">19,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">4 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">8 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">160 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">5 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">2</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox LXC Container</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Stündliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                        <div class="feature">✓ Priority Support</div>
-                    </div>
-                                            <a href="contact.php?package=vpc-professional" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Enterprise Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPC Enterprise</h3>
-                        <div class="package-price">
-                            <span class="price">39,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">8 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">16 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">320 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">10 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">3</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox LXC Container</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Stündliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                        <div class="feature">✓ Priority Support</div>
-                        <div class="feature">✓ Individuelle Konfiguration</div>
-                    </div>
-                                            <a href="contact.php?package=vpc-enterprise" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
+                <?php echo renderAllPackages('vpc'); ?>
             </div>
         </div>
     </section>
@@ -343,4 +179,4 @@ includeHeader($page_title, $page_description, $current_page);
 <?php
 // Include footer
 includeFooter();
-?> 
+?>

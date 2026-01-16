@@ -10,7 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Konfiguration laden
-require_once 'config/config.php';
+require_once 'config/mail-config.php';
 
 // PHPMailer Autoload (falls via Composer installiert)
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {

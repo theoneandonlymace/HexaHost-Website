@@ -1,9 +1,14 @@
 <?php
 require_once 'includes/functions.php';
+require_once 'config/products-config.php';
+
+// Produkt-Daten aus Config laden
+$product = getProduct('mail-gateway');
+$packages = getProductPackages('mail-gateway');
 
 // Page configuration
-$page_title = 'Mail Gateway - Professionelle E-Mail-Lösungen | HexaHost.de';
-$page_description = 'Professionelle Mail Gateway Lösungen für Unternehmen. Spam-Schutz, E-Mail-Archivierung und sichere E-Mail-Kommunikation bei HexaHost.de';
+$page_title = $product['page_title'];
+$page_description = $product['page_description'];
 $current_page = 'mail-gateway';
 
 // Include header
@@ -65,164 +70,7 @@ includeHeader($page_title, $page_description, $current_page);
                 </p>
             </div>
             <div class="packages-grid">
-                <!-- Starter Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Mail Starter</h3>
-                        <div class="package-price">
-                            <span class="price">4,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Postfächer:</span>
-                            <span class="spec-value">5</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Speicher/Postfach:</span>
-                            <span class="spec-value">5 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mails/Tag:</span>
-                            <span class="spec-value">500</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Spam-Filter</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ Webmail</div>
-                        <div class="feature">✓ IMAP/POP3</div>
-                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
-                    </div>
-                    <a href="contact.php?package=mail-starter" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Business Package -->
-                <div class="package-card glass-card featured">
-                    <div class="featured-badge">Beliebt</div>
-                    <div class="package-header">
-                        <h3 class="package-name">Mail Business</h3>
-                        <div class="package-price">
-                            <span class="price">14,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Postfächer:</span>
-                            <span class="spec-value">25</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Speicher/Postfach:</span>
-                            <span class="spec-value">10 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">3</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mails/Tag:</span>
-                            <span class="spec-value">2.000</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Spam-Filter (erweitert)</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ Webmail</div>
-                        <div class="feature">✓ IMAP/POP3</div>
-                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
-                        <div class="feature">✓ E-Mail Archivierung (30 Tage)</div>
-                        <div class="feature">✓ Kalender & Kontakte</div>
-                    </div>
-                    <a href="contact.php?package=mail-business" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Professional Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Mail Professional</h3>
-                        <div class="package-price">
-                            <span class="price">29,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Postfächer:</span>
-                            <span class="spec-value">100</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Speicher/Postfach:</span>
-                            <span class="spec-value">25 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">10</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mails/Tag:</span>
-                            <span class="spec-value">10.000</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Spam-Filter (KI-gestützt)</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ Webmail</div>
-                        <div class="feature">✓ IMAP/POP3</div>
-                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
-                        <div class="feature">✓ E-Mail Archivierung (1 Jahr)</div>
-                        <div class="feature">✓ Kalender & Kontakte</div>
-                        <div class="feature">✓ ActiveSync für Mobile</div>
-                    </div>
-                    <a href="contact.php?package=mail-professional" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Enterprise Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">Mail Enterprise</h3>
-                        <div class="package-price">
-                            <span class="price">59,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">Postfächer:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Speicher/Postfach:</span>
-                            <span class="spec-value">50 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Domains:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">E-Mails/Tag:</span>
-                            <span class="spec-value">Unbegrenzt</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Spam-Filter (KI-gestützt)</div>
-                        <div class="feature">✓ Virus-Schutz</div>
-                        <div class="feature">✓ Webmail</div>
-                        <div class="feature">✓ IMAP/POP3</div>
-                        <div class="feature">✓ SSL/TLS Verschlüsselung</div>
-                        <div class="feature">✓ E-Mail Archivierung (10 Jahre)</div>
-                        <div class="feature">✓ Kalender & Kontakte</div>
-                        <div class="feature">✓ ActiveSync für Mobile</div>
-                        <div class="feature">✓ Dedizierte IP</div>
-                        <div class="feature">✓ Priority Support</div>
-                    </div>
-                    <a href="contact.php?package=mail-enterprise" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
+                <?php echo renderAllPackages('mail-gateway'); ?>
             </div>
         </div>
     </section>

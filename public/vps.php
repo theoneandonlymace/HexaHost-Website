@@ -1,9 +1,14 @@
 <?php
 require_once 'includes/functions.php';
+require_once 'config/products-config.php';
+
+// Produkt-Daten aus Config laden
+$product = getProduct('vps');
+$packages = getProductPackages('vps');
 
 // Page configuration
-$page_title = 'Virtual Private Server - KVM Virtualisierung | HexaHost.de';
-$page_description = 'Virtual Private Server auf Proxmox KVM-Basis. Vollwertige Virtualisierung mit Root-Zugriff ab 9,99€/Monat bei HexaHost.de';
+$page_title = $product['page_title'];
+$page_description = $product['page_description'];
 $current_page = 'vps';
 
 // Include header
@@ -69,176 +74,7 @@ includeHeader($page_title, $page_description, $current_page);
                 </p>
             </div>
             <div class="packages-grid">
-                <!-- Starter Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPS Starter</h3>
-                        <div class="package-price">
-                            <span class="price">9,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">1 vCore</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">2 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">40 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">2 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox KVM Virtualisierung</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Backup inklusive</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                    </div>
-                                            <a href="contact.php?package=vps-starter" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Business Package -->
-                <div class="package-card glass-card featured">
-                    <div class="featured-badge">Beliebt</div>
-                    <div class="package-header">
-                        <h3 class="package-name">VPS Business</h3>
-                        <div class="package-price">
-                            <span class="price">19,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">2 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">4 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">80 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">4 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">1</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox KVM Virtualisierung</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Tägliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                    </div>
-                                            <a href="contact.php?package=vps-business" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Professional Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPS Professional</h3>
-                        <div class="package-price">
-                            <span class="price">39,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">4 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">8 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">160 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">8 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">2</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox KVM Virtualisierung</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Stündliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                        <div class="feature">✓ Priority Support</div>
-                    </div>
-                                            <a href="contact.php?package=vps-professional" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
-
-                <!-- Enterprise Package -->
-                <div class="package-card glass-card">
-                    <div class="package-header">
-                        <h3 class="package-name">VPS Enterprise</h3>
-                        <div class="package-price">
-                            <span class="price">79,99€</span>
-                            <span class="period">/Monat</span>
-                        </div>
-                    </div>
-                    <div class="package-specs">
-                        <div class="spec-item">
-                            <span class="spec-label">CPU Kerne:</span>
-                            <span class="spec-value">8 vCores</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">RAM:</span>
-                            <span class="spec-value">16 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">SSD Speicher:</span>
-                            <span class="spec-value">320 GB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Traffic:</span>
-                            <span class="spec-value">15 TB</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">IPv4 Adressen:</span>
-                            <span class="spec-value">3</span>
-                        </div>
-                    </div>
-                    <div class="package-features">
-                        <div class="feature">✓ Proxmox KVM Virtualisierung</div>
-                        <div class="feature">✓ Root-Zugriff</div>
-                        <div class="feature">✓ SSH-Zugang</div>
-                        <div class="feature">✓ Stündliches Backup</div>
-                        <div class="feature">✓ 24/7 Monitoring</div>
-                        <div class="feature">✓ Snapshot-Funktion</div>
-                        <div class="feature">✓ Priority Support</div>
-                        <div class="feature">✓ Individuelle Konfiguration</div>
-                    </div>
-                                            <a href="contact.php?package=vps-enterprise" class="btn btn-primary">Jetzt bestellen</a>
-                </div>
+                <?php echo renderAllPackages('vps'); ?>
             </div>
         </div>
     </section>
@@ -347,4 +183,4 @@ includeHeader($page_title, $page_description, $current_page);
 <?php
 // Include footer
 includeFooter();
-?> 
+?>
