@@ -2,7 +2,7 @@
 
 Eine moderne und umfangreiche Website für das Hosting-Unternehmen HexaHost.de aus Niederbayern.
 
-> ℹ️ **Hinweis:** Dieses Projekt benötigt das [HexaHost-Backend](https://github.com/theoneandonlymace/HexaHost-Backend) Repository für die vollständige Funktionalität. Das Backend enthält wiederverwendbare PHP-Templates, JavaScript-Module, CSS-Styles und Konfigurationsdateien.
+> ℹ️ **Hinweis:** Dieses Projekt benötigt das [HexaHost-Backend](https://github.com/HexaHost-de/HexaHost-Backend) Repository für die vollständige Funktionalität. Das Backend enthält wiederverwendbare PHP-Templates, JavaScript-Module, CSS-Styles und Konfigurationsdateien.
 
 ## 🚀 Features
 
